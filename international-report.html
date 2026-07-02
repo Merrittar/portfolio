@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intercultural Communication — Lea Nixon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+
+/* ===== BASE / VARIABLES ===== */
+:root{
+  --bg:#080B10;
+  --bg-alt:#0D121A;
+  --panel:#121822;
+  --panel-2:#181F2B;
+  --panel-3:#1E2733;
+  --line:rgba(255,255,255,0.08);
+  --line-strong:rgba(255,255,255,0.14);
+  --cyan:#4FE0D0;
+  --cyan-dim:rgba(79,224,208,0.14);
+  --blue:#6E9CF0;
+  --blue-dim:rgba(110,156,240,0.14);
+  --violet:#9B8CF0;
+  --violet-dim:rgba(155,140,240,0.14);
+  --text:#EEF2F7;
+  --text-dim:#95A2B5;
+  --text-faint:#5A6779;
+  --radius:14px;
+  --maxw:1180px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+.mono{font-family:'JetBrains Mono',monospace;}
+.display{font-family:'Space Grotesk',sans-serif;}
+
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.eyebrow::before{
+  content:"";
+  width:22px;
+  height:1px;
+  background:linear-gradient(90deg, var(--cyan), transparent);
+}
+
+/* ===== NAV ===== */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px 0;
+  transition:background .3s ease, border-color .3s ease, padding .3s ease;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:rgba(8,11,16,0.78);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  padding:14px 0;
+}
+nav{display:flex; align-items:center; justify-content:space-between;}
+.logo{
+  width:40px; height:40px; border-radius:10px;
+  background:linear-gradient(145deg, var(--panel-2), var(--panel));
+  border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px;
+  color:var(--cyan);
+  box-shadow:0 0 0 1px rgba(79,224,208,0.05), 0 6px 18px -8px rgba(0,0,0,0.6);
+  cursor:pointer;
+}
+.nav-links{display:flex; gap:34px; align-items:center;}
+.nav-links a{
+  font-size:14px; color:var(--text-dim); font-weight:500;
+  transition:color .2s ease; position:relative; cursor:pointer;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{
+  font-family:'JetBrains Mono',monospace; font-size:12.5px;
+  padding:9px 18px; border-radius:9px;
+  border:1px solid var(--line-strong);
+  background:var(--panel-2);
+  color:var(--text) !important;
+  transition:all .2s ease;
+}
+.nav-cta:hover{border-color:var(--cyan); box-shadow:0 0 0 1px var(--cyan), 0 0 24px -4px var(--cyan);}
+.menu-btn{display:none; background:none; border:none; color:var(--text); font-size:22px; cursor:pointer;}
+
+@media (max-width:860px){
+  .nav-links{
+    position:fixed; top:0; right:-100%; height:100vh; width:78%; max-width:340px;
+    background:var(--bg-alt); flex-direction:column; justify-content:center; align-items:flex-start;
+    padding:40px; gap:26px; transition:right .35s ease; border-left:1px solid var(--line);
+    z-index:200;
+  }
+  .nav-links.open{right:0;}
+  .menu-btn{display:block; z-index:210;}
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex; align-items:center;
+  padding:150px 0 90px;
+  overflow:hidden;
+  background:var(--bg);
+}
+.orb{position:absolute; border-radius:50%; pointer-events:none; will-change:transform;}
+.orb-1{width:800px; height:800px; top:-280px; left:-220px; background:radial-gradient(circle, rgba(79,224,208,0.13) 0%, transparent 65%); animation:orbFloat1 20s ease-in-out infinite;}
+.orb-2{width:650px; height:650px; bottom:-180px; right:-180px; background:radial-gradient(circle, rgba(110,156,240,0.11) 0%, transparent 65%); animation:orbFloat2 26s ease-in-out infinite;}
+.orb-3{width:450px; height:450px; top:30%; left:42%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(155,140,240,0.09) 0%, transparent 65%); animation:orbFloat3 16s ease-in-out infinite;}
+@keyframes orbFloat1{0%,100%{transform:translate(0,0) scale(1)} 35%{transform:translate(55px,35px) scale(1.07)} 68%{transform:translate(-25px,65px) scale(0.95)}}
+@keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1)} 38%{transform:translate(-65px,-35px) scale(1.10)} 72%{transform:translate(28px,-72px) scale(0.97)}}
+@keyframes orbFloat3{0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-50%) scale(1.38)}}
+.hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.5fr 1fr; gap:60px; align-items:end;}
+.hero-tag{margin-bottom:22px;}
+.hero h1{
+  font-size:clamp(52px, 8vw, 96px);
+  line-height:0.98;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  background:linear-gradient(180deg, #FFFFFF 30%, #AEBBCB 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-sub{
+  margin-top:22px; font-size:clamp(17px,2.2vw,21px); color:var(--text-dim);
+  max-width:480px; font-weight:400;
+}
+.hero-body{margin-top:24px; max-width:520px; color:var(--text-dim); font-size:15.5px;}
+.hero-actions{display:flex; gap:14px; margin-top:38px; flex-wrap:wrap;}
+.btn{
+  font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.02em;
+  padding:15px 30px; border-radius:100px; display:inline-flex; align-items:center; gap:10px;
+  transition:all .4s cubic-bezier(.2,.8,.2,1); cursor:pointer; border:1px solid transparent;
+}
+.btn-primary{
+  background:linear-gradient(160deg, rgba(79,224,208,0.2), rgba(79,224,208,0.06));
+  border:1px solid rgba(79,224,208,0.35); color:var(--cyan);
+}
+.btn-primary:hover{transform:translateY(-3px) scale(1.03); box-shadow:0 20px 40px -15px rgba(79,224,208,0.28), 0 0 0 1px rgba(79,224,208,0.25); border-color:rgba(79,224,208,0.6);}
+.btn-ghost{border:1px solid rgba(255,255,255,0.1); color:var(--text); background:rgba(255,255,255,0.03); border-radius:100px;}
+.btn-ghost:hover{transform:translateY(-3px) scale(1.03); border-color:rgba(255,255,255,0.22); background:rgba(255,255,255,0.07);}
+
+.hero-stats{
+  display:flex; flex-direction:column; gap:22px;
+  border-left:1px solid var(--line); padding-left:28px;
+}
+.hero-stats li{font-family:'JetBrains Mono',monospace; font-size:13.5px; color:var(--text-dim);}
+.hero-stats b{color:var(--cyan); font-weight:500;}
+.hero-stats li:nth-child(2) b{color:var(--blue);}
+.hero-stats li:nth-child(3) b{color:var(--violet);}
+
+/* ===== SECTION SHELL ===== */
+section{padding:120px 0; position:relative;}
+.section-head{margin-bottom:56px; max-width:640px;}
+.section-head h2{
+  font-family:'Space Grotesk',sans-serif; font-weight:600;
+  font-size:clamp(30px,4vw,46px); margin-top:16px; letter-spacing:-0.01em;
+}
+.divider{
+  display:flex; align-items:center; gap:14px; margin:0 auto 0;
+  max-width:var(--maxw); padding:0 32px;
+}
+.divider::before,.divider::after{content:""; flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--line), transparent);}
+.divider-node{width:7px; height:7px; border-radius:2px; background:var(--cyan); transform:rotate(45deg); box-shadow:0 0 12px var(--cyan);}
+
+/* reveal */
+.reveal{opacity:0; transform:translateY(22px); filter:blur(5px); transition:opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1), filter .9s ease;}
+.reveal.in{opacity:1; transform:translateY(0); filter:blur(0);}
+
+/* ===== FOCUS GRID ===== */
+.focus-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
+@media (max-width:980px){.focus-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.focus-grid{grid-template-columns:1fr;}}
+.focus-card{
+  background:linear-gradient(145deg, var(--panel-2), var(--panel));
+  border:1px solid var(--line); border-radius:20px;
+  padding:28px 24px; transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .4s ease; position:relative; overflow:hidden;
+}
+.focus-card::before{
+  content:""; position:absolute; inset:0; border-radius:20px;
+  background:radial-gradient(ellipse at top left, rgba(79,224,208,0.1), transparent 55%);
+  opacity:0; transition:opacity .4s ease;
+}
+.focus-card:hover{transform:translateY(-7px) scale(1.01); box-shadow:0 28px 60px -22px rgba(0,0,0,0.75), 0 0 0 1px rgba(79,224,208,0.12);}
+.focus-card:hover::before{opacity:1;}
+.focus-icon{
+  width:46px; height:46px; border-radius:14px; margin-bottom:20px;
+  background:linear-gradient(135deg, rgba(79,224,208,0.18), rgba(79,224,208,0.05));
+  border:1px solid rgba(79,224,208,0.18);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--cyan);
+}
+.focus-card h3{font-size:15.5px; font-weight:600; margin-bottom:8px; font-family:'Space Grotesk',sans-serif;}
+.focus-card p{font-size:13.5px; color:var(--text-dim); line-height:1.55;}
+
+/* ===== PROJECTS ===== */
+.proj-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+@media (max-width:980px){.proj-grid{grid-template-columns:1fr;}}
+.proj-card{
+  border-radius:24px; overflow:hidden; background:var(--panel);
+  border:1px solid var(--line); position:relative;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease;
+  transform-style:preserve-3d; perspective:1000px;
+  display:block; cursor:pointer;
+}
+.proj-card::before{
+  content:""; position:absolute; inset:0; opacity:0;
+  background:radial-gradient(ellipse at 50% 0%, rgba(79,224,208,0.06), transparent 60%);
+  transition:opacity .45s ease; z-index:1; pointer-events:none;
+}
+.proj-card:hover::before{opacity:1;}
+.proj-link{
+  display:inline-flex; align-items:center; gap:6px; margin-top:16px;
+  font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--cyan);
+  opacity:0; transform:translateX(-4px); transition:all .25s ease;
+}
+.proj-card:hover .proj-link{opacity:1; transform:translateX(0);}
+.proj-card:hover{box-shadow:0 40px 80px -28px rgba(0,0,0,0.8), 0 0 60px -20px rgba(79,224,208,0.06); border-color:var(--line-strong); transform:translateY(-8px);}
+.proj-media{height:190px; position:relative; overflow:hidden;}
+.proj-media svg{width:100%; height:100%; display:block;}
+.proj-media::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(9,12,17,0.9) 100%);}
+.proj-tag{
+  position:absolute; top:16px; left:16px; z-index:2;
+  font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em;
+  padding:6px 11px; border-radius:20px; backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.18); background:rgba(10,14,20,0.45);
+}
+.proj-year{
+  position:absolute; top:16px; right:16px; z-index:2;
+  font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-dim);
+}
+.proj-body{padding:24px 24px 28px;}
+.proj-body h3{font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin-bottom:10px;}
+.proj-body p{font-size:13.8px; color:var(--text-dim); line-height:1.6;}
+
+/* ===== ABOUT ===== */
+.about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:start;}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr; gap:44px;}}
+.about-big{font-family:'Space Grotesk',sans-serif; font-size:clamp(36px,5vw,58px); font-weight:600; line-height:1.05; letter-spacing:-0.01em;}
+.about-block{margin-bottom:34px;}
+.about-block h4{
+  font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--blue); margin-bottom:12px;
+}
+.about-block p{color:var(--text-dim); font-size:15px; line-height:1.75;}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative; padding-left:34px;}
+.timeline::before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background:linear-gradient(180deg, var(--cyan), var(--line) 90%);}
+.t-item{position:relative; padding-bottom:44px;}
+.t-item:last-child{padding-bottom:0;}
+.t-item::before{
+  content:""; position:absolute; left:-34px; top:4px; width:13px; height:13px; border-radius:50%;
+  background:var(--bg); border:2px solid var(--cyan); box-shadow:0 0 0 4px var(--bg), 0 0 16px rgba(79,224,208,0.5);
+}
+.t-date{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--cyan); margin-bottom:6px; display:block;}
+.t-item h3{font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; margin-bottom:3px;}
+.t-item .t-org{font-size:13.5px; color:var(--text-dim); margin-bottom:10px;}
+.t-item p{font-size:14px; color:var(--text-dim); line-height:1.65; max-width:640px;}
+.chip-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+.chip{
+  font-family:'JetBrains Mono',monospace; font-size:11px; padding:5px 11px; border-radius:20px;
+  border:1px solid var(--line); color:var(--text-dim); background:rgba(255,255,255,0.02);
+}
+.exp-sub{margin-top:18px; padding-left:20px; border-left:1px solid var(--line);}
+.exp-sub .t-item{padding-bottom:30px;}
+.exp-sub .t-item::before{left:-27px; width:9px; height:9px; border-color:var(--blue); box-shadow:0 0 0 4px var(--bg), 0 0 12px rgba(110,156,240,0.5);}
+.exp-sub .t-date{color:var(--blue);}
+.two-col-tl{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
+@media (max-width:900px){.two-col-tl{grid-template-columns:1fr; gap:50px;}}
+.col-label{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:30px;}
+
+/* ===== AWARDS ===== */
+.award-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+@media (max-width:980px){.award-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.award-grid{grid-template-columns:1fr;}}
+.award-card{
+  background:linear-gradient(160deg, var(--panel-2), var(--panel));
+  border:1px solid var(--line); border-radius:var(--radius); padding:28px 22px;
+  text-align:center; transition:transform .3s ease, border-color .3s ease;
+}
+.award-card:hover{transform:translateY(-4px); border-color:rgba(155,140,240,0.4);}
+.award-icon{color:var(--violet); margin:0 auto 16px;}
+.award-icon svg{stroke:var(--violet);}
+.award-org{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em; color:var(--violet); text-transform:uppercase; margin-bottom:8px;}
+.award-card h3{font-size:15px; font-weight:600; margin-bottom:12px; font-family:'Space Grotesk',sans-serif;}
+.award-card p{font-size:12.5px; color:var(--text-dim); line-height:1.6;}
+
+/* ===== TESTIMONIALS ===== */
+.test-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+@media (max-width:820px){.test-grid{grid-template-columns:1fr;}}
+.test-card{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:30px;
+  position:relative;
+}
+.test-quote-mark{position:absolute; top:20px; right:26px; font-family:'Space Grotesk',sans-serif; font-size:56px; color:var(--panel-3); line-height:1;}
+.test-head{display:flex; align-items:center; gap:14px; margin-bottom:18px;}
+.avatar{
+  width:46px; height:46px; border-radius:50%; flex-shrink:0;
+  background:linear-gradient(135deg, var(--cyan-dim), var(--blue-dim));
+  border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px; color:var(--text);
+}
+.test-head h4{font-size:14.5px; font-weight:600;}
+.test-head span{font-size:12px; color:var(--text-dim); display:block; margin-top:2px;}
+.test-card p{font-size:14px; color:var(--text-dim); line-height:1.7; position:relative; z-index:1;}
+
+/* ===== VOLUNTEER ===== */
+.vol-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media (max-width:900px){.vol-grid{grid-template-columns:1fr;}}
+.vol-card{border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--panel);}
+.vol-media{height:150px; position:relative;}
+.vol-media svg{width:100%; height:100%;}
+.vol-body{padding:22px;}
+.vol-body .t-date{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--cyan); text-transform:uppercase; letter-spacing:0.06em;}
+.vol-body h3{font-family:'Space Grotesk',sans-serif; font-size:16.5px; font-weight:600; margin:8px 0 10px;}
+.vol-body p{font-size:13px; color:var(--text-dim); line-height:1.6;}
+
+/* ===== CONTACT ===== */
+.contact-panel{
+  border-radius:24px; padding:70px 60px; position:relative; overflow:hidden;
+  background:linear-gradient(160deg, var(--panel-2), var(--bg-alt));
+  border:1px solid var(--line-strong);
+}
+.contact-panel::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(ellipse 600px 300px at 85% 0%, rgba(79,224,208,0.14), transparent 70%);
+}
+.contact-grid{position:relative; z-index:1; display:flex; justify-content:space-between; align-items:flex-end; gap:40px; flex-wrap:wrap;}
+.contact-grid h2{font-family:'Space Grotesk',sans-serif; font-size:clamp(34px,5vw,54px); font-weight:600; letter-spacing:-0.01em; max-width:480px;}
+.contact-list{display:flex; flex-direction:column; gap:14px;}
+.contact-list a{
+  display:flex; align-items:center; gap:12px; font-family:'JetBrains Mono',monospace; font-size:14px;
+  padding:13px 18px; border-radius:10px; border:1px solid var(--line-strong); background:rgba(255,255,255,0.02);
+  transition:all .25s ease;
+}
+.contact-list a:hover{border-color:var(--cyan); color:var(--cyan); transform:translateX(4px);}
+
+footer{padding:40px 0; border-top:1px solid var(--line);}
+.foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+.foot-row p{font-size:12.5px; color:var(--text-faint); font-family:'JetBrains Mono',monospace;}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-stats{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:24px; margin-top:10px;}
+  section{padding:80px 0;}
+  .wrap{padding:0 22px;}
+  .contact-panel{padding:44px 26px;}
+  .contact-grid{align-items:flex-start;}
+}
+
+/* ===== NCDMV CASE STUDY STYLES ===== */
+.cs-hero{min-height:auto; padding:150px 0 70px; align-items:flex-start;}
+.cs-hero::before{background:radial-gradient(ellipse 900px 500px at 15% 0%, rgba(79,224,208,0.10), transparent 60%);}
+.back-link{
+  display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace;
+  font-size:12.5px; color:var(--text-dim); margin-bottom:28px; transition:color .2s ease; cursor:pointer;
+}
+.back-link:hover{color:var(--cyan);}
+.cs-title{font-size:clamp(38px,6vw,64px); font-weight:700; letter-spacing:-0.02em; max-width:820px;
+  background:linear-gradient(180deg,#fff 30%,#AEBBCB 100%); -webkit-background-clip:text; background-clip:text; color:transparent;}
+.cs-meta{display:flex; gap:40px; flex-wrap:wrap; margin-top:34px; padding-top:28px; border-top:1px solid var(--line);}
+.cs-meta div h4{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px;}
+.cs-meta div p{font-size:14.5px; font-weight:500;}
+.cs-lede{font-size:17px; color:var(--text-dim); max-width:720px; margin-top:26px; line-height:1.75;}
+
+.stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+@media (max-width:820px){.stat-row{grid-template-columns:repeat(2,1fr);}}
+.stat-card{background:linear-gradient(160deg, var(--panel-2), var(--panel)); border:1px solid var(--line); border-radius:var(--radius); padding:24px;}
+.stat-card .num{font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--cyan);}
+.stat-card .lbl{font-size:12.5px; color:var(--text-dim); margin-top:6px; line-height:1.4;}
+
+.body-copy{max-width:760px;}
+.body-copy p{color:var(--text-dim); font-size:15.5px; line-height:1.8; margin-bottom:20px;}
+.body-copy h3{font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:600; margin:8px 0 16px; color:var(--text);}
+.pull-quote{
+  border-left:2px solid var(--cyan); padding:6px 0 6px 24px; margin:36px 0;
+  font-family:'Space Grotesk',sans-serif; font-size:21px; font-weight:500; color:var(--text); max-width:640px;
+}
+
+.persona-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+@media (max-width:980px){.persona-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.persona-grid{grid-template-columns:1fr;}}
+.persona-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:20px;}
+.persona-card .p-num{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--cyan); margin-bottom:10px;}
+.persona-card .p-age{font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:600;}
+.persona-card ul{margin-top:12px; display:flex; flex-direction:column; gap:6px;}
+.persona-card li{font-size:12px; color:var(--text-dim);}
+
+.task-highlight{
+  display:flex; align-items:center; gap:26px; background:linear-gradient(160deg, var(--panel-2), var(--panel));
+  border:1px solid var(--line); border-radius:var(--radius); padding:28px; flex-wrap:wrap;
+}
+.task-highlight .big{font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:700; color:var(--blue);}
+.task-highlight p{color:var(--text-dim); font-size:14px; max-width:420px; margin:0;}
+
+.finding-list{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media (max-width:760px){.finding-list{grid-template-columns:1fr;}}
+.finding-item{display:flex; gap:14px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 20px;}
+.finding-item .dot{width:8px; height:8px; border-radius:2px; background:var(--cyan); transform:rotate(45deg); margin-top:6px; flex-shrink:0;}
+.finding-item p{font-size:13.8px; color:var(--text-dim); line-height:1.6; margin:0;}
+
+.rec-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+@media (max-width:860px){.rec-grid{grid-template-columns:1fr;}}
+.rec-card{background:linear-gradient(160deg, var(--panel-2), var(--panel)); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+.rec-card .rec-num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--violet); margin-bottom:14px;}
+.rec-card h3{font-family:'Space Grotesk',sans-serif; font-size:16.5px; font-weight:600; margin-bottom:10px;}
+.rec-card p{font-size:13.5px; color:var(--text-dim); line-height:1.6;}
+
+.next-proj{
+  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  border:1px solid var(--line-strong); border-radius:var(--radius); padding:28px 30px;
+  background:linear-gradient(160deg, var(--panel-2), var(--bg-alt));
+}
+.next-proj a{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--cyan); display:flex; align-items:center; gap:8px;}
+
+/* ===== PAGE SWITCHING ===== */
+#page-portfolio{display:block;}
+#page-ncdmv{display:none;}
+#page-international{display:none;}
+
+/* ===== INTERNATIONAL PAGE STYLES ===== */
+.body-text{color:var(--text-dim); font-size:15.5px; line-height:1.85; margin-bottom:20px; max-width:780px;}
+.page-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(36px,6vw,62px); font-weight:700;
+  letter-spacing:-0.02em; line-height:1.05;
+  background:linear-gradient(180deg,#fff 30%,#AEBBCB 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  margin-top:14px; margin-bottom:32px;
+}
+.memo-card{background:linear-gradient(160deg,var(--panel-2),var(--panel)); border:1px solid var(--line-strong); border-radius:var(--radius); padding:32px 36px; margin-top:36px;}
+.memo-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 40px; margin-bottom:28px;}
+.memo-row{display:flex; gap:10px; align-items:baseline;}
+.memo-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); flex-shrink:0; width:70px;}
+.memo-val{font-size:14.5px; font-weight:500;}
+.memo-divider{border:none; border-top:1px solid var(--line); margin:22px 0;}
+.memo-body{font-size:15px; color:var(--text-dim); line-height:1.8;}
+.memo-sig{margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:600; color:var(--text);}
+.overview-table{width:100%; border-collapse:collapse; border-radius:var(--radius); overflow:hidden;}
+.overview-table th{background:var(--panel-2); padding:14px 20px; font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; font-weight:500; border-bottom:1px solid var(--line-strong); text-align:left;}
+.overview-table th:first-child{color:var(--text-faint);}
+.overview-table th:nth-child(2){color:var(--cyan);}
+.overview-table th:nth-child(3){color:var(--blue);}
+.overview-table td{padding:16px 20px; font-size:14px; color:var(--text-dim); border-bottom:1px solid var(--line); vertical-align:top; background:var(--panel);}
+.overview-table tr:last-child td{border-bottom:none;}
+.overview-table td:first-child{font-family:'JetBrains Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--violet); font-weight:500;}
+.overview-table td ul{list-style:none; padding:0; display:flex; flex-direction:column; gap:6px;}
+.overview-table td li::before{content:"· "; color:var(--cyan);}
+.overview-table tr:hover td{background:var(--panel-2);}
+.context-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:10px;}
+@media(max-width:700px){.context-grid{grid-template-columns:1fr;}}
+.context-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+.context-card .c-label{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;}
+.context-card p{font-size:14px; color:var(--text-dim); line-height:1.75;}
+.compare-table{width:100%; border-collapse:collapse; border-radius:var(--radius); overflow:hidden;}
+.compare-table th{padding:14px 22px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; font-weight:500; border-bottom:2px solid var(--line-strong); text-align:left;}
+.compare-table th:nth-child(1){background:rgba(79,224,208,0.08); color:var(--cyan);}
+.compare-table th:nth-child(2){background:rgba(110,156,240,0.08); color:var(--blue);}
+.compare-table td{padding:16px 22px; font-size:14px; color:var(--text-dim); border-bottom:1px solid var(--line); vertical-align:top; line-height:1.7;}
+.compare-table td:nth-child(1){background:rgba(79,224,208,0.04);}
+.compare-table td:nth-child(2){background:rgba(110,156,240,0.04);}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table td ul{list-style:none; padding:0; display:flex; flex-direction:column; gap:8px;}
+.compare-table td li{font-size:13.5px; padding-left:14px; position:relative;}
+.compare-table td:nth-child(1) li::before{content:"●"; position:absolute; left:0; font-size:7px; color:var(--cyan); top:5px;}
+.compare-table td:nth-child(2) li::before{content:"●"; position:absolute; left:0; font-size:7px; color:var(--blue); top:5px;}
+.chart-wrap{background:linear-gradient(160deg,var(--panel-2),var(--panel)); border:1px solid var(--line); border-radius:var(--radius); padding:36px 32px;}
+.chart-title{font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:600; margin-bottom:6px;}
+.chart-sub{font-size:13px; color:var(--text-dim); margin-bottom:32px;}
+.chart-legend{display:flex; gap:24px; margin-bottom:28px;}
+.legend-item{display:flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-dim);}
+.legend-dot{width:12px; height:12px; border-radius:3px;}
+.bar-chart{display:flex; flex-direction:column; gap:18px;}
+.bar-group{display:flex; flex-direction:column; gap:7px;}
+.bar-label{font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-faint); margin-bottom:4px;}
+.bar-row{display:flex; align-items:center; gap:12px;}
+.bar-track{flex:1; height:28px; background:rgba(255,255,255,0.04); border-radius:6px; overflow:hidden; position:relative;}
+.bar-fill{height:100%; border-radius:6px; transition:width 1.2s cubic-bezier(.2,.8,.2,1); display:flex; align-items:center; padding-left:10px; width:0;}
+.bar-fill span{font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:500; color:rgba(0,0,0,0.7);}
+.bar-country{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-faint); width:52px; text-align:right; flex-shrink:0;}
+.fact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:10px;}
+@media(max-width:700px){.fact-grid{grid-template-columns:1fr;}}
+.fact-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px;}
+.fact-icon{font-size:22px; margin-bottom:10px;}
+.fact-card p{font-size:13.5px; color:var(--text-dim); line-height:1.65;}
+.split-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+@media(max-width:700px){.split-grid{grid-template-columns:1fr;}}
+.split-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:26px;}
+.split-card h4{font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:14px;}
+.split-card.tw h4{color:var(--cyan);}
+.split-card.us h4{color:var(--blue);}
+.split-card p{font-size:13.8px; color:var(--text-dim); line-height:1.75;}
+.rec-list{display:flex; flex-direction:column; gap:14px;}
+.rec-item{display:flex; gap:16px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 22px; align-items:flex-start;}
+.rec-item .rec-num{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--violet); flex-shrink:0; padding-top:3px; width:24px;}
+.rec-item p{font-size:14px; color:var(--text-dim); line-height:1.65; margin:0;}
+.company-row{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px;}
+.company-chip{font-family:'JetBrains Mono',monospace; font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--line); color:var(--text-dim); background:rgba(255,255,255,0.02);}
+.company-chip.tw{border-color:rgba(79,224,208,0.3); color:var(--cyan); background:var(--cyan-dim);}
+.company-chip.us{border-color:rgba(110,156,240,0.3); color:var(--blue); background:var(--blue-dim);}
+.ref-list{display:flex; flex-direction:column; gap:14px;}
+.ref-item{font-size:13px; color:var(--text-dim); line-height:1.7; padding-left:20px; position:relative;}
+.ref-item::before{content:""; position:absolute; left:0; top:10px; width:8px; height:1px; background:var(--violet);}
+
+#page-portfolio{display:none;}
+#page-ncdmv{display:none;}
+#page-international{display:block !important;}
+body{overflow-x:hidden;}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <nav>
+      <a href="combined6.html" class="logo" style="text-decoration:none;">LM</a>
+      <ul class="nav-links">
+        <li><a href="combined6.html">Back to portfolio</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="page-international">
+
+<section class="hero cs-hero">
+  <div class="wrap" style="position:relative; z-index:2;">
+    <span class="back-link" onclick="history.back()" style="cursor:pointer;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to projects
+    </span>
+    <div class="eyebrow">Research &amp; Analysis · Intercultural Communication</div>
+    <h1 class="page-title display" style="margin-top:16px;">Intercultural<br>Communication</h1>
+    <p style="font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:500; color:var(--text-dim); margin-top:10px;">A Global Market Analysis</p>
+    <p style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-faint); margin-top:6px; letter-spacing:0.06em;">Market of Focus: <span style="color:var(--cyan);">Taiwan</span></p>
+    <p style="font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--text-faint); margin-top:6px; letter-spacing:0.06em;">Lea Nixon</p>
+    <div class="memo-card">
+      <div class="memo-grid">
+        <div class="memo-row"><span class="memo-label">To</span><span class="memo-val">Dr. Adams</span></div>
+        <div class="memo-row"><span class="memo-label">From</span><span class="memo-val">Lea Nixon</span></div>
+        <div class="memo-row"><span class="memo-label">Date</span><span class="memo-val">06-25-2026</span></div>
+        <div class="memo-row"><span class="memo-label">Subject</span><span class="memo-val">Intercultural Communication Meeting</span></div>
+      </div>
+      <hr class="memo-divider">
+      <p class="memo-body">Are you excited to visit Taiwan? In response to the recent request to prepare the team for an upcoming visit to Taiwan's global market, I've prepared a report that will cover Taiwan's common workplace practices. The increase in our organization's global expansion has allowed for seamless collaboration with staff, customers, and clients on a worldwide scale.</p>
+      <p class="memo-body" style="margin-top:16px;">While technological innovations have significantly impacted global interaction, cultural communication gaps remain a struggle within both domestic and international professional environments. This expansion requires a full understanding of intercultural workplace norms, as the digital tools that connect us do not automatically bridge the gap in social expectations or differences.</p>
+      <p class="memo-body" style="margin-top:16px;">Because our organization is currently expanding in Taiwan, it is crucial to understand local business customs and communication preferences to prevent misunderstandings and develop long-term professional relationships. Failing to recognize these differences can lead to significant social friction, while a culturally informed approach will ensure effective, respectful collaboration.</p>
+      <p class="memo-body" style="margin-top:16px;">Should you have any questions, feel free to contact me at <span style="color:var(--cyan); font-family:'JetBrains Mono',monospace; font-size:13px;">merrittar@appstate.edu</span>. I look forward to speaking with you at our meeting!</p>
+      <div class="memo-sig">
+        <span style="font-family:'Inter',sans-serif; font-size:14px; font-weight:400; color:var(--text-dim);">Best,</span><br>
+        <span style="font-family:'Caveat',cursive; font-size:28px; font-weight:500; color:var(--text); line-height:1.2; display:block; margin-top:4px;">Lea Nixon</span>
+        <div style="margin-top:10px; padding-top:12px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:4px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--cyan);">Merrittar@appstate.edu</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-faint);">Watauga College of Business &nbsp;|&nbsp; +1 (704)-264-4281</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="margin-top:60px;"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Executive Summary</div>
+      <h2 class="display">Understanding cultural differences for global growth.</h2>
+    </div>
+    <p class="body-text reveal">As our business and employees expand into international markets, it has become increasingly relevant to understand cultural differences to encourage effective communication and collaboration. Taiwan serves as a vital business partner and ally for our corporation and country, as it stands as one of the prime manufacturing and technology-driven economies in Asia. While this collaboration has already proven to be an efficient business connection, it's crucial to recognize communication differences between both regions; and to acknowledge the communication styles, workplace expectations, and business etiquette that differ significantly between our cultures.</p>
+    <p class="body-text reveal">These variations stem from deep-seated cultural values, such as the American preference for directness and efficiency versus the Taiwanese emphasis on social harmony and relationship-building. For all companies that are currently expanding in Taiwan, understanding these local business customs and communication preferences is essential for preventing misunderstandings and developing long-term professional relationships.</p>
+    <p class="body-text reveal">This report will examine Taiwan's business culture and common communication practices, compare them to American workplace norms, and provide recommendations to help employees communicate respectfully and effectively while working with Taiwanese colleagues and clients.</p>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Taiwan – Language &amp; Overview</div>
+      <h2 class="display">A side-by-side comparison.</h2>
+    </div>
+    <div class="reveal" style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+      <table class="overview-table">
+        <thead><tr><th></th><th>Taiwan</th><th>United States</th></tr></thead>
+        <tbody>
+          <tr><td>Population</td><td>23.5 Million People</td><td>340 Million People</td></tr>
+          <tr><td>Demographics</td><td>The majority of residents are Han Chinese, with small indigenous groups making up 2 to 3 percent of the population.</td><td>Diverse population, many identifying as White, Hispanic/Latino, African American, Asian, Native American and/or having mixed backgrounds.</td></tr>
+          <tr><td>Language</td><td>Mandarin Chinese (primary), Taiwanese, Hokkien, and Hakka.</td><td>English (primary), Spanish, and 350 other identified languages.</td></tr>
+          <tr><td>Locale</td><td>Located in East Asia, 100 miles (160km) off the southeastern coast of mainland China. The capital city is Taipei.</td><td>Located in North America, has 50 states, and borders Mexico and Canada.</td></tr>
+          <tr><td>Professional Proverbs</td>
+            <td><ul><li>"When drinking water, remember its source" — Quality is more important than speed.</li><li>"Unity is strength" — Teamwork leads to success.</li></ul></td>
+            <td><ul><li>"Time is Money!" — Efficiency is highly valued.</li><li>"Actions speak louder than words" — Results matter more than promises.</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:600; margin:44px 0 18px; color:var(--text);">Little-known facts about Taiwan</h3>
+    <div class="fact-grid">
+      <div class="fact-card reveal">
+        <div class="fact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <p>Taiwan has "Musical Garbage Trucks." Unlike the United States, Taiwan has very few public trash bins. Instead, residents wait for musical garbage trucks that play music to throw their trash in.</p>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="1.5"><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+        <p>Taiwan has one of the highest densities of convenience stores in the world.</p>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <p>Unlike mainland China (which uses simplified Chinese), Taiwan writes using traditional Chinese letters, which are more intricate and expressive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Cultural Context</div>
+      <h2 class="display">High-context vs. low-context communication.</h2>
+    </div>
+    <div class="context-grid">
+      <div class="context-card reveal">
+        <div class="c-label" style="color:var(--cyan);">Taiwan — High-Context</div>
+        <p>Communication relies on shared history, nonverbal cues, and implicit meanings. Composure is highly valued, and exaggerated gestures could be viewed as emotionally volatile or unprofessional. Employees often use moderate eye-contact and polite, reserved body language. Business communication is rooted in "saving face," making it commonly seen as disrespectful to openly disagree with or criticize another person, especially in a group setting.</p>
+      </div>
+      <div class="context-card reveal">
+        <div class="c-label" style="color:var(--blue);">United States — Low-Context</div>
+        <p>Communication requires clear, direct, and explicit language that is often taken at face value. American professionals tend to use expressive gestures, firm handshakes, and sustained eye contact to communicate confidence and engagement. American culture prioritizes individual achievement, performance competition, and direct communication habits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Cultural Dimensions</div>
+      <h2 class="display">Hofstede's framework: Taiwan vs. United States.</h2>
+    </div>
+    <div class="chart-wrap reveal">
+      <p class="chart-title">Country Comparison</p>
+      <p class="chart-sub">Source: The Culture Factor Group — Country Comparison Tool (2025)</p>
+      <div class="chart-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--cyan);"></div> Taiwan</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--blue);"></div> United States</div>
+      </div>
+      <div class="bar-chart" id="barChart">
+        <div class="bar-group"><div class="bar-label">Power Distance</div>
+          <div class="bar-row"><span class="bar-country">Taiwan</span><div class="bar-track"><div class="bar-fill" style="background:var(--cyan);" data-width="58"><span>58</span></div></div></div>
+          <div class="bar-row"><span class="bar-country">USA</span><div class="bar-track"><div class="bar-fill" style="background:var(--blue);" data-width="40"><span>40</span></div></div></div>
+        </div>
+        <div class="bar-group"><div class="bar-label">Individualism</div>
+          <div class="bar-row"><span class="bar-country">Taiwan</span><div class="bar-track"><div class="bar-fill" style="background:var(--cyan);" data-width="17"><span>17</span></div></div></div>
+          <div class="bar-row"><span class="bar-country">USA</span><div class="bar-track"><div class="bar-fill" style="background:var(--blue);" data-width="91"><span>91</span></div></div></div>
+        </div>
+        <div class="bar-group"><div class="bar-label">Motivation / Achievement</div>
+          <div class="bar-row"><span class="bar-country">Taiwan</span><div class="bar-track"><div class="bar-fill" style="background:var(--cyan);" data-width="45"><span>45</span></div></div></div>
+          <div class="bar-row"><span class="bar-country">USA</span><div class="bar-track"><div class="bar-fill" style="background:var(--blue);" data-width="62"><span>62</span></div></div></div>
+        </div>
+        <div class="bar-group"><div class="bar-label">Uncertainty Avoidance</div>
+          <div class="bar-row"><span class="bar-country">Taiwan</span><div class="bar-track"><div class="bar-fill" style="background:var(--cyan);" data-width="69"><span>69</span></div></div></div>
+          <div class="bar-row"><span class="bar-country">USA</span><div class="bar-track"><div class="bar-fill" style="background:var(--blue);" data-width="46"><span>46</span></div></div></div>
+        </div>
+        <div class="bar-group"><div class="bar-label">Long-Term Orientation</div>
+          <div class="bar-row"><span class="bar-country">Taiwan</span><div class="bar-track"><div class="bar-fill" style="background:var(--cyan);" data-width="93"><span>93</span></div></div></div>
+          <div class="bar-row"><span class="bar-country">USA</span><div class="bar-track"><div class="bar-fill" style="background:var(--blue);" data-width="26"><span>26</span></div></div></div>
+        </div>
+        <div class="bar-group"><div class="bar-label">Indulgence</div>
+          <div class="bar-row"><span class="bar-country">Taiwan</span><div class="bar-track"><div class="bar-fill" style="background:var(--cyan);" data-width="49"><span>49</span></div></div></div>
+          <div class="bar-row"><span class="bar-country">USA</span><div class="bar-track"><div class="bar-fill" style="background:var(--blue);" data-width="68"><span>68</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Social Differences</div>
+      <h2 class="display">Work ethic, attitudes, and hierarchy</h2>
+    </div>
+    <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin-bottom:16px; color:var(--text);">Work Ethic &amp; Attitudes</h3>
+    <p class="body-text reveal">A notable difference between the American and Taiwanese workplace cultures is the norm for work-life balance expectations. Especially as of recent, corporations in the United States are increasingly encouraging work-life balance, flexible scheduling, and employee well-being. American professionals often prioritize physical and mental health as essential components of long-term productivity.</p>
+    <p class="body-text reveal">In Taiwan, dedication to the company and commitment to professional responsibility are highly respected (Fairfax County, 2026). While work-life balance has improved in recent years, employees often feel a strong sense of obligation to support organizational goals regardless of potential work-life needs. This sense of duty often manifests as longer hours and a perception that personal well-being is secondary to the success of the organization. For foreign employees, it is vital to recognize that what may appear as a lack of workplace boundaries in Taiwan is actually an expression of professional loyalty.</p>
+    <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:44px 0 16px; color:var(--text);">Roles &amp; Status</h3>
+    <p class="body-text reveal">Respect for hierarchy significantly influences how decisions are made and shared (Chu, 2024). Unlike American workplaces that may encourage employees to challenge strategic decisions regardless of seniority, Taiwanese professionals are generally more cautious and mindful of managers or senior co-workers. Relationship-building is also a primary focus; while U.S. meetings often prioritize efficiency and task completion, Taiwanese business culture requires developing trust and personal connections before discussing major commercial agreements.</p>
+    <p class="body-text reveal">In the United States, meetings are generally more interactive and fluid; participation is encouraged across all levels regardless of tenure or hierarchy. American employees frequently ask questions and interrupt respectfully to clarify points, share feedback, or pivot topics. In contrast, Taiwanese business meetings are more formal and highly structured. Employees often wait until others finish their sentences before contributing, as interruptions (even those meant to be helpful) may be viewed as a sign of disrespect toward the speaker's authority (NTZE, 2025). (The Culture Factor, 2026)</p>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Workplace Etiquette</div>
+      <h2 class="display">Professional Conduct</h2>
+    </div>
+    <div class="reveal" style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+      <table class="compare-table">
+        <thead><tr><th>Taiwan</th><th>United States</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><ul><li>Address people by their title, followed by their surname (unless invited to do otherwise).</li></ul></td>
+            <td><ul><li>Address people by their names and/or surnames; only use their title in a formal setting.</li></ul></td>
+          </tr>
+          <tr>
+            <td><ul><li>Pre-arranging meetings is important, but do not schedule anything more than two weeks in advance.</li></ul></td>
+            <td><ul><li>Pre-arrange meetings well in advance, and avoid scheduling events within two weeks of the event date.</li></ul></td>
+          </tr>
+          <tr>
+            <td><ul>
+              <li>It is mannerly to politely decline a gift a few times before accepting, and open the gift when the gifter is not present.</li>
+              <li>Leaving work before senior management is frowned upon; take social cues before leaving the office.</li>
+              <li>Dress formally; business professional or "smart casual" is common — adhere to company dress code when specified.</li>
+            </ul></td>
+            <td><ul>
+              <li>It is mannerly to accept a gift, open it in front of the gifter, and express gratitude.</li>
+              <li>It is common practice to leave work when work is finished or at the scheduled departure time.</li>
+              <li>Dress depends on office standards; business casual is typical in an office without specified dress codes.</li>
+            </ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Individualism, Collectivism, &amp; Future Orientation</div>
+      <h2 class="display">How decisions and feedback differ</h2>
+    </div>
+    <p class="body-text reveal">One of the most significant differences between Taiwan and the United States is the level of connection, and the approach to employee engagement in the workplace. While American corporations prioritize individual decisions, Taiwanese corporations function with a high degree of formality and typically make decisions based on a group consensus to ensure organizational and professional alignment (Fairfax County, 2026).</p>
+    <div class="pull-quote reveal">"Public criticism is strictly avoided in Taiwan — negative feedback is communicated privately to preserve dignity and social harmony."</div>
+    <p class="body-text reveal">Similarly, the delivery of constructive criticism varies greatly between the two workplace cultures. In the United States, feedback is typically delivered directly and transparently, as it is viewed as a necessary tool for personal and organizational improvement. In Taiwan, negative feedback is communicated in a private, subtle, and diplomatic manner to preserve dignity and social harmony. Public criticism is strictly avoided, as it may damage professional relationships, cause embarrassment, and negatively impact workplace morale. For American professionals, understanding this indirectness is crucial to understanding the difference between agreement and social courtesy.</p>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Gender &amp; Religious Influences</div>
+      <h2 class="display">Structural and cultural factors</h2>
+    </div>
+    <div class="split-grid">
+      <div class="split-card tw reveal">
+        <h4>Gender Differences</h4>
+        <p>Taiwan leads Asia in gender equality and has a smaller wage gap than the United States, but traditional family caregiving expectations are often an obstacle that can force women to pause their careers. Taiwan's wage gap is between 14 and 17 percent, which is technically better than the United States. The Taiwanese work culture often encourages mandatory long hours and high pressure, which makes it difficult for working mothers and female caregivers to create work-life balance.</p>
+      </div>
+      <div class="split-card us reveal">
+        <h4>Religious Influences &amp; Differences</h4>
+        <p>Taiwan is one of the most religiously diverse nations globally (Pew Research Center, 2026). In Taiwan, decision-making is deeply influenced by concepts of Karma and Confucianism. Values like consensus, harmony, and long-term relationships over individual profit are valued. In the United States, American businesses are rooted in the "Protestant work ethic" and value individualism, assertiveness, meritocracy, and direct communication (Pew Research Center, 2026).</p>
+      </div>
+    </div>
+    <div class="split-grid" style="margin-top:18px;">
+      <div class="split-card reveal" style="border-color:rgba(79,224,208,0.2);">
+        <h4 style="color:var(--text); font-size:14px;">United States — Gender</h4>
+        <p>The United States shows higher labor participation rates, but struggles with executive underrepresentation. The U.S. has an average wage gap of 26 to 28 percent, and has a similar struggle with executive underrepresentation, but is working toward flexible hours, hybrid schedules, and remote work to accommodate women's labor retention (Global Taiwan Institute, 2016).</p>
+      </div>
+      <div class="split-card reveal" style="border-color:rgba(110,156,240,0.2);">
+        <h4 style="color:var(--text); font-size:14px;">US-Based Multinationals in Taiwan</h4>
+        <p style="margin-bottom:14px;">Global companies operating across both markets:</p>
+        <div class="company-row">
+          <span class="company-chip tw">Apple</span><span class="company-chip tw">Microsoft</span><span class="company-chip tw">Amazon (AWS)</span><span class="company-chip tw">Google</span><span class="company-chip tw">Intel</span>
+        </div>
+        <p style="margin:10px 0 8px; font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em;">Taiwanese companies in the US</p>
+        <div class="company-row">
+          <span class="company-chip us">Foxconn AI</span><span class="company-chip us">GlobalWafers</span><span class="company-chip us">Chunghwa Telecom</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Recommendations</div>
+      <h2 class="display">For employees traveling to Taiwan...</h2>
+    </div>
+    <div class="rec-list">
+      <div class="rec-item reveal"><span class="rec-num">01</span><p>Never publicly criticise a colleague or correct an employer in a meeting.</p></div>
+      <div class="rec-item reveal"><span class="rec-num">02</span><p>Deliver constructive feedback privately.</p></div>
+      <div class="rec-item reveal"><span class="rec-num">03</span><p>Praise your team publicly to build morale.</p></div>
+      <div class="rec-item reveal"><span class="rec-num">04</span><p>Listen for phrases like "We'll try," "It's inconvenient," or long extended silences; this is often a polite "no."</p></div>
+      <div class="rec-item reveal"><span class="rec-num">05</span><p>Respect for age and seniority is critical. Avoid challenging senior decisions openly, and pay attention to the collective consensus as it is heavily valued in the workplace.</p></div>
+      <div class="rec-item reveal"><span class="rec-num">06</span><p>Build relationships first by breaking the ice over shared meals and socializing outside of work when possible.</p></div>
+      <div class="rec-item reveal"><span class="rec-num">07</span><p>Consider bringing small treats for the office to build rapport!</p></div>
+      <div class="rec-item reveal"><span class="rec-num">08</span><p>When exchanging business cards, accept the card using both hands, and spend a moment reading the card you're given before putting it away.</p></div>
+      <div class="rec-item reveal"><span class="rec-num">09</span><p>Avoid forcing fast-paced decision making or imposing aggressive deadlines.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Concluding Thoughts</div>
+      <h2 class="display">Collaboration formed through cultural awareness</h2>
+    </div>
+    <p class="body-text reveal">Professional communication varies across all global markets; a reality that should be celebrated for its unique benefits. Taiwan's workplace culture provides a perspective that is often less emphasised in the United States, valuing sincere interpersonal relationships within a setting where employees dedicate the majority of their time. This corporate culture does not trade performance for rapport; it integrates effectiveness into a harmonious workplace.</p>
+    <p class="body-text reveal">While these two cultures have many differences, both maintain a deep respect for creative innovation and diverse perspectives. When these differences are acknowledged with cultural awareness and a true respect for diversity, a successful collaboration is formed, regardless of difference.</p>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">References</div>
+      <h2 class="display">Sources</h2>
+    </div>
+    <div class="ref-list">
+      <p class="ref-item reveal">Amann_DCI, K. (2025, January 15). <em>What's the Difference Between Asian and US Work Culture?</em> Fairfax County EDA.</p>
+      <p class="ref-item reveal">Bovee, C. L., &amp; Thill, J. V. (2020). <em>Business Communication Today</em> (15th ed.). Pearson Education (US).</p>
+      <p class="ref-item reveal">Chu, I. (2024, January 30). <em>East Meets West: Navigating Cultural Differences in the Semiconductor Industry.</em> Kiterocket.</p>
+      <p class="ref-item reveal">Global Taiwan Institute. (2016, December 14). <em>The Unsung Success of Womenomics in Taiwan.</em></p>
+      <p class="ref-item reveal">myNZTE. (2025). <em>Business culture in Taiwan.</em></p>
+      <p class="ref-item reveal"><em>Navigating Taiwan's Unique Workplace Culture: A Guide for International Business Partners.</em> (2024). Tcml-Mandarin.org.</p>
+      <p class="ref-item reveal">The Culture Factor Group. (2025). <em>Country Comparison Tool.</em></p>
+      <p class="ref-item reveal">UNDERSTANDING THE IMPACT OF CULTURE. (2022). Cliqdigital.com.</p>
+      <p class="ref-item reveal">Miner, W. (2024, July 29). <em>4 facts about religion and diversity in Taiwan.</em> Pew Research Center.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <p>&copy; 2026 LEA NIXON</p>
+    <span class="mono" style="font-size:12.5px; color:var(--text-dim); cursor:pointer;" onclick="history.back()" style="cursor:pointer;">&larr; Back to all projects</span>
+  </div>
+</footer>
+
+</div><!-- end #page-international -->
+
+<script>
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+function initReveal() {
+  const revealEls = document.querySelectorAll('.reveal:not(.in)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+}
+initReveal();
+
+// Animate bar chart when it scrolls into view
+function initBarChart() {
+  const bars = document.querySelectorAll('.bar-fill');
+  const chartEl = document.getElementById('barChart');
+  if (!chartEl) return;
+  const chartObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        bars.forEach(bar => { bar.style.width = bar.getAttribute('data-width') + '%'; });
+        chartObs.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  chartObs.observe(chartEl);
+}
+initReveal();
+initBarChart();
+</script>
+
+</body>
+</html>
