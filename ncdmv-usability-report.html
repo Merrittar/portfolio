@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NCDMV Usability Report — Lea Merritt</title>
+<title>NCDMV Usability Report; Lea Merritt</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -379,7 +379,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 
 
 /* case-study components */
-/* Shared case-study components — default site theme (cyan/blue/violet, Space Grotesk + JetBrains Mono) */
+/* Shared case-study components; default site theme (cyan/blue/violet, Space Grotesk + JetBrains Mono) */
 
 .cs-hero{min-height:auto; padding:150px 0 70px; align-items:flex-start;}
 .cs-hero::before{background:radial-gradient(ellipse 900px 500px at 15% 0%, rgba(79,224,208,0.10), transparent 60%);}
@@ -439,6 +439,9 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 .rec-card p{font-size:13.5px; color:var(--text-dim); line-height:1.6;}
 
 .source-list{font-size:12.5px; color:var(--text-faint); line-height:1.9; max-width:760px;}
+.apa-refs{max-width:760px;}
+.apa-refs p{font-size:13px; color:var(--text-dim); line-height:1.7; margin:0 0 14px 28px; text-indent:-28px;}
+.apa-refs em{font-style:italic; color:var(--text);}
 .source-list span{display:block;}
 
 /* Timeline variant for stage-by-stage breakdowns (phishing anatomy) */
@@ -496,7 +499,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
     </a>
     <div class="eyebrow">Case Study · UX Research &amp; Accessibility</div>
     <h1 class="cs-title display" style="margin-top:16px;">NCDMV website: a usability report</h1>
-    <p class="cs-lede">A moderated usability study of North Carolina's DMV website, built around five participant personas and four task-based scenarios — surfacing the navigation, clarity, and accessibility gaps that get in the way of an essential government service.</p>
+    <p class="cs-lede">Five participants. Four tasks. One iPhone. This moderated usability study of North Carolina's DMV website surfaces the navigation, clarity, and accessibility gaps standing between residents and an essential government service.</p>
     <div class="cs-meta">
       <div><h4>Role</h4><p>UX Researcher &amp; Author</p></div>
       <div><h4>Year</h4><p>2025</p></div>
@@ -512,7 +515,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="stat-card"><div class="num">9M+</div><div class="lbl">North Carolinians rely on the NCDMV annually for IDs, licenses, and registration</div></div>
       <div class="stat-card"><div class="num">5</div><div class="lbl">Participants spanning age, language, and technical-fluency ranges</div></div>
       <div class="stat-card"><div class="num">4</div><div class="lbl">Moderated tasks, completed on a physical iPhone to surface mobile-specific friction</div></div>
-      <div class="stat-card"><div class="num">5–8/10</div><div class="lbl">Self-reported difficulty range across all participants and tasks</div></div>
+      <div class="stat-card"><div class="num">5; 8/10</div><div class="lbl">Self-reported difficulty range across all participants and tasks</div></div>
     </div>
   </div>
 </section>
@@ -523,10 +526,10 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap body-copy">
     <div class="eyebrow reveal">Executive Summary</div>
     <h3 class="reveal" style="margin-top:16px;">Why test the NCDMV website?</h3>
-    <p class="reveal">The NCDMV website exists to cut down the long lines and appointment bottlenecks the department is known for. But with millions of North Carolinians depending on it every year for IDs, licenses, voter registration, and vehicle credentials, a site that's merely functional isn't enough — it has to work for everyone, regardless of age, language, or technical fluency. This report treats that as an ethical baseline, not a nice-to-have: if a system this essential fails a user during a critical process, the consequences are real.</p>
+    <p class="reveal">The NCDMV website exists to shorten the lines and appointment headaches the department is known for. But millions of North Carolinians depend on it every year for IDs, licenses, voter registration, vehicle credentials. Functional isn't enough. It has to work for everyone, regardless of age, language, or technical fluency. That's not a nice-to-have; it's the baseline. If a system this essential fails someone mid-task, the consequences are real.</p>
     <p class="reveal">The working hypothesis going in: circular page navigation, a lack of translated content beyond English, and limited accessibility considerations were the likely root causes of user frustration with the site.</p>
     <div class="pull-quote reveal">"To identify an issue is to solve half of it."</div>
-    <p class="reveal">Testing confirmed most of that hypothesis. Users struggled with the site as a whole — frequently frustrated by disorienting navigation, visual clutter, and information that contradicted itself from page to page. The recommendations that follow focus on cutting that clutter, consolidating redundant pathways, and closing language and accessibility gaps.</p>
+    <p class="reveal">Testing confirmed most of that hypothesis. Users struggled with the site as a whole; frequently frustrated by disorienting navigation, visual clutter, and information that contradicted itself from page to page. The recommendations that follow focus on cutting that clutter, consolidating redundant pathways, and closing language and accessibility gaps.</p>
   </div>
 </section>
 
@@ -539,8 +542,8 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <h2 class="display">How the test was run.</h2>
     </div>
     <div class="body-copy reveal">
-      <p>Participants were recruited in public spaces and walked through a structured session: pre-test questions, a set of task-based scenarios with follow-up check-ins, and post-test debrief questions. Every session ran under an hour, in person or over Zoom depending on what the participant preferred, on their own device — with the notable exception of the core testing device described below. Identities were kept anonymous in the final report, and only written data was retained; sessions were captured via screen recording and moderator notes on verbal and non-verbal cues.</p>
-      <p>One task in particular — locating the voter registration portal and completing a registration form — became a focal point of the study, since it surfaced the clearest breakdowns in navigation and functionality.</p>
+      <p>Participants were recruited in public spaces and walked through a structured session: pre-test questions, a set of task-based scenarios with follow-up check-ins, and post-test debrief questions. Every session ran under an hour, in person or over Zoom depending on what the participant preferred, on their own device; with the notable exception of the core testing device described below. Identities were kept anonymous in the final report, and only written data was retained; sessions were captured via screen recording and moderator notes on verbal and non-verbal cues.</p>
+      <p>One task in particular; locating the voter registration portal and completing a registration form; became a focal point of the study, since it surfaced the clearest breakdowns in navigation and functionality.</p>
     </div>
 
     <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:44px 0 20px;">Participant personas</h3>
@@ -574,7 +577,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 
     <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:44px 0 20px;">Why mobile, deliberately</h3>
     <div class="body-copy reveal">
-      <p>Testing was run on an iPhone on purpose — a growing share of users interact with government services on mobile, and desktop-only testing would have missed mobile-specific breakdowns entirely: unstable interactive maps, dropdown menus that interfered with scrolling, and touch-sensitivity issues throughout the flow.</p>
+      <p>Testing was run on an iPhone on purpose; a growing share of users interact with government services on mobile, and desktop-only testing would have missed mobile-specific breakdowns entirely: unstable interactive maps, dropdown menus that interfered with scrolling, and touch-sensitivity issues throughout the flow.</p>
     </div>
   </div>
 </section>
@@ -590,15 +593,15 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 
     <div class="task-highlight reveal" style="margin-bottom:40px;">
       <div class="big">8.4 min</div>
-      <p>Average completion time for Task 4 — locating and completing the voter registration portal — making it by far the most time-consuming task in the study. Some participants received search results that didn't link to a working registration page at all.</p>
+      <p>Average completion time for Task 4; locating and completing the voter registration portal; making it by far the most time-consuming task in the study. Some participants received search results that didn't link to a working registration page at all.</p>
     </div>
 
     <div class="finding-list">
-      <div class="finding-item reveal"><span class="dot"></span><p>Most users defaulted to the search bar rather than the site's navigation toolbar — a sign the toolbar itself wasn't trusted or intuitive enough to rely on.</p></div>
-      <div class="finding-item reveal"><span class="dot"></span><p>Difficulty ratings landed between 5 and 8 out of 10 across the board — nobody found the site easy, regardless of technical fluency.</p></div>
-      <div class="finding-item reveal"><span class="dot"></span><p>The one bilingual participant tested — fluent in both Spanish and English — completed every task faster than the monolingual English speakers, despite English not being their first language.</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p>Most users defaulted to the search bar rather than the site's navigation toolbar; a sign the toolbar itself wasn't trusted or intuitive enough to rely on.</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p>Difficulty ratings landed between 5 and 8 out of 10 across the board; nobody found the site easy, regardless of technical fluency.</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p>The one bilingual participant tested; fluent in both Spanish and English; completed every task faster than the monolingual English speakers, despite English not being their first language.</p></div>
       <div class="finding-item reveal"><span class="dot"></span><p>Moderated sessions captured clear audible and body-language cues pointing to frustration, especially around unresponsive interactive elements.</p></div>
-      <div class="finding-item reveal"><span class="dot"></span><p>Circular navigation kept surfacing — pages that linked back into each other rather than moving users toward a clear end state, especially around appointments.</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p>Circular navigation kept surfacing; pages that linked back into each other rather than moving users toward a clear end state, especially around appointments.</p></div>
       <div class="finding-item reveal"><span class="dot"></span><p>Visual clutter and redundant hotspots made it harder to identify which element on a page actually mattered.</p></div>
     </div>
   </div>
@@ -616,12 +619,12 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="rec-card reveal">
         <div class="rec-num">01</div>
         <h3>Fix bugs before polish</h3>
-        <p>Prioritize repairing broken links and unresponsive elements — like the voter registration search results — over aesthetic changes. A reliable site beats a pretty one.</p>
+        <p>Prioritize repairing broken links and unresponsive elements; like the voter registration search results; over aesthetic changes. A reliable site beats a pretty one.</p>
       </div>
       <div class="rec-card reveal">
         <div class="rec-num">02</div>
         <h3>Straighten circular pathways</h3>
-        <p>Collapse pages that loop back into each other — particularly around appointment scheduling — into a single, direct pathway from start to finish.</p>
+        <p>Collapse pages that loop back into each other; particularly around appointment scheduling; into a single, direct pathway from start to finish.</p>
       </div>
       <div class="rec-card reveal">
         <div class="rec-num">03</div>
@@ -641,7 +644,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="rec-card reveal">
         <div class="rec-num">06</div>
         <h3>Build in accessibility by default</h3>
-        <p>Treat accessibility features as a core requirement rather than an add-on — the site serves a population millions strong and can't assume a single kind of user.</p>
+        <p>Treat accessibility features as a core requirement rather than an add-on; the site serves a population millions strong and can't assume a single kind of user.</p>
       </div>
     </div>
   </div>
@@ -653,7 +656,10 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="body-copy reveal" style="margin-bottom:20px;">
       <div class="eyebrow" style="margin-bottom:16px;">Sources</div>
-      <p style="font-size:13.5px;">This study drew on published research and reporting for its ethical framing, including work on web-accessibility ethics and ethics in data science, a Procedia Computer Science paper on institutional web accessibility, a 2006 Information and Software Technology study on test diversity, and 2025 reporting on North Carolina's DMV accessibility legislation. Full citations are available in the original report.</p>
+      <div class="apa-refs">
+        <p>Merritt, L. (2025). <em>NCDMV website: A usability report</em>. Google Sites. https://sites.google.com/appstate.edu/usabilityreport</p>
+      </div>
+      <p style="font-size:12.5px; color:var(--text-faint); margin-top:16px;">This page paraphrases and restructures the original report above. That report cites additional academic sources on web-accessibility ethics and usability testing not reproduced here; see the original report for its full reference list.</p>
     </div>
   </div>
 </section>
