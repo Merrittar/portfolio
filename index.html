@@ -283,6 +283,12 @@ section{padding:120px 0; position:relative;}
 .t-item h3{font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:600; margin-bottom:3px;}
 .t-item .t-org{font-size:13.5px; color:var(--text-dim); margin-bottom:10px;}
 .t-item p{font-size:14px; color:var(--text-dim); line-height:1.65; max-width:640px;}
+.t-item-muted{opacity:0.55; padding-bottom:28px;}
+.t-item-muted::before{width:8px; height:8px; left:-32px; border-color:var(--text-faint); box-shadow:0 0 0 4px var(--bg);}
+.t-item-muted h3{font-size:14.5px;}
+.t-item-muted .t-date{color:var(--text-faint); font-size:10.5px;}
+.t-item-muted .t-org{font-size:12px;}
+.t-item-muted p{font-size:12.5px;}
 .chip-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
 .resume-bullets{margin-top:10px; padding-left:18px;}
 .resume-bullets li{font-size:13.5px; color:var(--text-dim); line-height:1.65; margin-bottom:6px; list-style:disc;}
@@ -485,34 +491,6 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
     </div>
     <div class="proj-grid">
 
-      <a class="proj-card reveal" data-tilt href="ncdmv-usability-report.html">
-        <div class="proj-media">
-          <span class="proj-tag" style="color:#4FE0D0;">UX/UI · Accessibility</span>
-          <span class="proj-year">2025</span>
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#0F1B22"/><stop offset="100%" stop-color="#173B3B"/>
-              </linearGradient>
-              <linearGradient id="s1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#4FE0D0" stop-opacity="0.9"/><stop offset="100%" stop-color="#0F1B22" stop-opacity="0.1"/>
-              </linearGradient>
-            </defs>
-            <rect width="400" height="300" fill="url(#g1)"/>
-            <polygon points="60,240 180,120 260,190 150,280" fill="url(#s1)" opacity="0.5"/>
-            <polygon points="140,60 320,40 300,200 180,190" fill="#4FE0D0" opacity="0.12"/>
-            <polygon points="180,190 300,200 250,270 150,280" fill="#4FE0D0" opacity="0.22"/>
-            <line x1="60" y1="240" x2="320" y2="40" stroke="#4FE0D0" stroke-opacity="0.35" stroke-width="1"/>
-            <line x1="180" y1="120" x2="300" y2="200" stroke="#4FE0D0" stroke-opacity="0.3" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="proj-body">
-          <h3>NCDMV Usability Report</h3>
-          <p>A sample-based usability study of the North Carolina DMV website, mapping points of visual tension, information discrepancies, and circular navigation.</p>
-          <span class="proj-link">View case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-
       <a class="proj-card reveal" data-tilt href="asulearn-privacy-audit.html">
         <div class="proj-media">
           <span class="proj-tag" style="color:#6E9CF0;">Privacy · Data Ethics</span>
@@ -597,6 +575,34 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
         </div>
       </a>
 
+      <a class="proj-card reveal" data-tilt href="ncdmv-usability-report.html">
+        <div class="proj-media">
+          <span class="proj-tag" style="color:#4FE0D0;">UX/UI · Accessibility</span>
+          <span class="proj-year">2025</span>
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0F1B22"/><stop offset="100%" stop-color="#173B3B"/>
+              </linearGradient>
+              <linearGradient id="s1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4FE0D0" stop-opacity="0.9"/><stop offset="100%" stop-color="#0F1B22" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#g1)"/>
+            <polygon points="60,240 180,120 260,190 150,280" fill="url(#s1)" opacity="0.5"/>
+            <polygon points="140,60 320,40 300,200 180,190" fill="#4FE0D0" opacity="0.12"/>
+            <polygon points="180,190 300,200 250,270 150,280" fill="#4FE0D0" opacity="0.22"/>
+            <line x1="60" y1="240" x2="320" y2="40" stroke="#4FE0D0" stroke-opacity="0.35" stroke-width="1"/>
+            <line x1="180" y1="120" x2="300" y2="200" stroke="#4FE0D0" stroke-opacity="0.3" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <h3>NCDMV Usability Report</h3>
+          <p>A sample-based usability study of the North Carolina DMV website, mapping points of visual tension, information discrepancies, and circular navigation.</p>
+          <span class="proj-link">View case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -636,18 +642,30 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
           <p>Concentration in Cybersecurity.</p>
         </div>
         <div class="t-item">
-          <span class="t-date">Expected Dec 2026</span>
+          <span class="t-date">Relevant Coursework</span>
+          <h3>Coursework &amp; Certifications</h3>
+          <ul class="resume-bullets">
+            <li><strong>Microsoft Office Specialist:</strong> Excel Associate (Microsoft 360 Apps)</li>
+            <li><strong>Networking and IT Infrastructures:</strong> OSI and TCP/IP models, IP addressing and subnetting, network architecture design, IP management, security &amp; threat awareness, professional collaboration.</li>
+            <li><strong>Database Management:</strong> Data modeling, SQL, data integrity, security controls, normalization, entity-relationship diagrams, and mapping complex corporate data structures.</li>
+            <li><strong>System Analysis &amp; Design:</strong> SDLC, Agile &amp; Waterfall frameworks, project timelines, stakeholder interviews, user interface design, data-flow diagram design, system architecture design.</li>
+            <li><strong>Programming Software Solutions:</strong> OOP principles, polymorphism, encapsulation, abstraction, logic &amp; algorithm building, Python, debugging, deploying software solutions.</li>
+            <li><strong>Global Ethics &amp; Privacy:</strong> Regulatory compliance, GDPR, CCPA, cross-border data transfer rules, ethical framework evaluation, corporate data collection, risk mitigation, privacy-by-design policies.</li>
+          </ul>
+        </div>
+        <div class="t-item t-item-muted">
+          <span class="t-date">In progress · Expected Dec 2026</span>
           <h3>Introduction to Computer Science</h3>
           <div class="t-org">HarvardX · Remote</div>
           <p>Fundamentals of programming and algorithmic problem-solving: C, Python, SQL, HTML, CSS, and JavaScript.</p>
         </div>
-        <div class="t-item">
-          <span class="t-date">Expected Dec 2026</span>
+        <div class="t-item t-item-muted">
+          <span class="t-date">In progress · Expected Dec 2026</span>
           <h3>Programming with R</h3>
           <div class="t-org">HarvardX · Remote</div>
           <p>Fundamentals of the R programming language for data analysis and visualization: RStudio, data structures, Tidyverse, and graphing.</p>
         </div>
-        <div class="t-item">
+        <div class="t-item t-item-muted">
           <span class="t-date">2021</span>
           <h3>Understanding Economic Prosperity</h3>
           <div class="t-org">OxfordX · Remote</div>
