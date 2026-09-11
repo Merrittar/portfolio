@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lea Merritt — UX/UI Design & Digital Forensics</title>
+<title>Lea Merritt; UX/UI Design & Digital Forensics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -284,6 +284,22 @@ section{padding:120px 0; position:relative;}
 .t-item .t-org{font-size:13.5px; color:var(--text-dim); margin-bottom:10px;}
 .t-item p{font-size:14px; color:var(--text-dim); line-height:1.65; max-width:640px;}
 .chip-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+.resume-bullets{margin-top:10px; padding-left:18px;}
+.resume-bullets li{font-size:13.5px; color:var(--text-dim); line-height:1.65; margin-bottom:6px; list-style:disc;}
+.affil-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+@media (max-width:760px){.affil-grid{grid-template-columns:1fr;}}
+.affil-card{
+  display:flex; gap:20px; background:linear-gradient(160deg, var(--panel-2), var(--panel));
+  border:1px solid var(--line); border-radius:var(--radius); padding:26px;
+}
+.affil-badge{
+  width:56px; height:56px; border-radius:14px; flex-shrink:0;
+  background:var(--panel-3); border:1px solid var(--line-strong);
+  display:flex; align-items:center; justify-content:center;
+}
+.affil-card h3{font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:3px;}
+.affil-card .affil-role{font-size:12.5px; color:var(--cyan); font-family:'JetBrains Mono',monospace; margin-bottom:10px;}
+.affil-card .affil-date{font-size:11.5px; color:var(--text-faint); font-family:'JetBrains Mono',monospace; margin-bottom:10px; display:block;}
 .chip{
   font-family:'JetBrains Mono',monospace; font-size:11px; padding:5px 11px; border-radius:20px;
   border:1px solid var(--line); color:var(--text-dim); background:rgba(255,255,255,0.02);
@@ -314,8 +330,9 @@ section{padding:120px 0; position:relative;}
 .award-card p{font-size:12.5px; color:var(--text-dim); line-height:1.6;}
 
 /* ---------- TESTIMONIALS ---------- */
-.test-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
-@media (max-width:820px){.test-grid{grid-template-columns:1fr;}}
+.test-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media (max-width:1000px){.test-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.test-grid{grid-template-columns:1fr;}}
 .test-card{
   background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:30px;
   position:relative;
@@ -337,7 +354,9 @@ section{padding:120px 0; position:relative;}
 .vol-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
 @media (max-width:900px){.vol-grid{grid-template-columns:1fr;}}
 .vol-card{border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--panel);}
-.vol-media{height:150px; position:relative;}
+.vol-media{height:150px; position:relative; overflow:hidden;}
+.vol-media img{width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05); transition:transform .4s ease;}
+.vol-card:hover .vol-media img{transform:scale(1.04);}
 .vol-media svg{width:100%; height:100%;}
 .vol-body{padding:22px;}
 .vol-body .t-date{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--cyan); text-transform:uppercase; letter-spacing:0.06em;}
@@ -404,7 +423,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="eyebrow hero-tag">UX/UI Design · Digital Forensics · User Research</div>
       <h1 class="display">Lea<br>Merritt</h1>
       <p class="hero-sub">Bridging user experience, system design, and information security.</p>
-      <p class="hero-body">Hi, I'm Lea — a Computer Information Systems student at Appalachian State University focusing on interface design, user accessibility, and digital investigation. I work at the intersection of human behavior and technology to build digital systems that are frictionless, efficient, and secure.</p>
+      <p class="hero-body">Hi, I'm Lea. I study Computer Information Systems at Appalachian State University, with a focus on interface design, user accessibility, and digital investigation. I build systems that are frictionless, efficient, and secure; because good technology should work for the person using it, not against them.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View projects →</a>
         <a href="mailto:LeaNixn.Merr@gmail.com?subject=Resume%20Request" class="btn btn-ghost">Request résumé</a>
@@ -424,7 +443,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Areas of Focus</div>
-      <h2 class="display">Where design meets security.</h2>
+      <h2 class="display">Where design meets security</h2>
     </div>
     <div class="focus-grid">
       <div class="focus-card reveal">
@@ -462,7 +481,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Featured Work</div>
-      <h2 class="display">Analysis, investigation, perspective.</h2>
+      <h2 class="display">Analysis, investigation, perspective</h2>
     </div>
     <div class="proj-grid">
 
@@ -545,7 +564,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
         </div>
         <div class="proj-body">
           <h3>Anatomy of a Phishing Campaign</h3>
-          <p>A stage-by-stage breakdown of a real, well-documented spear-phishing breach — from the lure email to the eventual compromise.</p>
+          <p>A stage-by-stage breakdown of a real, well-documented spear-phishing breach; from the lure email to the eventual compromise.</p>
           <span class="proj-link">View case study <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
@@ -597,7 +616,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       </div>
       <div class="about-block">
         <h4>My Approach</h4>
-        <p>We're all digital users first — with real lives, biases, and experiences shaping how we interact with technology. A single positive technical interaction can define someone's impression of an entire system. Supporting Apple customers has given me first- and second-hand exposure to common technical pain points across iOS and Windows, sharpening my instincts for issue isolation and investigative troubleshooting — skills that carry directly into solving real-world friction points.</p>
+        <p>We're all digital users first; with real lives, biases, and experiences shaping how we interact with technology. A single positive technical interaction can define someone's impression of an entire system. Supporting Apple customers has given me first- and second-hand exposure to common technical pain points across iOS and Windows, sharpening my instincts for issue isolation and investigative troubleshooting; skills that carry directly into solving real-world friction points.</p>
       </div>
     </div>
   </div>
@@ -608,7 +627,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 <section id="education-exp">
   <div class="wrap two-col-tl">
     <div>
-      <div class="col-label reveal">01 — Education</div>
+      <div class="col-label reveal">01; Education</div>
       <div class="timeline reveal">
         <div class="t-item">
           <span class="t-date">Expected Dec 2027</span>
@@ -637,40 +656,79 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       </div>
     </div>
     <div>
-      <div class="col-label reveal">02 — Experience</div>
+      <div class="col-label reveal">02; Experience</div>
       <div class="timeline reveal">
         <div class="t-item">
-          <span class="t-date">May 2025 — Present</span>
-          <h3>iOS/MacOS+ Support</h3>
-          <div class="t-org">Apple · Cupertino, CA (Remote)</div>
-          <p>Diagnosing and resolving software and hardware issues while maintaining strict data confidentiality and cross-functional collaboration.</p>
+          <span class="t-date">May 2025; Present</span>
+          <h3>iOS/MacOS+ Support Technician</h3>
+          <div class="t-org">Apple · Remote</div>
+          <ul class="resume-bullets">
+            <li>Analyze complex customer and technical issues using multiple internal support tools, account information, documented history, and customer-verified information to identify root causes and determine appropriate resolutions.</li>
+            <li>Identify inconsistencies, outliers, and relevant patterns across customer-reported information, technical behavior, account context, and case documentation to support accurate issue resolution and escalation.</li>
+            <li>Diagnose and resolve iOS software and hardware issues via back-to-back phone contacts, ensuring accurate information delivery; consistently exceeding enterprise averages by maintaining a &gt;93% customer satisfaction rate across all interactions for FY26.</li>
+          </ul>
           <div class="chip-row">
             <span class="chip">Technical troubleshooting</span>
             <span class="chip">iOS / macOS / iPadOS</span>
-            <span class="chip">Documentation</span>
+            <span class="chip">Case documentation</span>
           </div>
         </div>
         <div class="t-item">
-          <span class="t-date">Jan 2025 — Present</span>
-          <h3>Plemmons Student Union</h3>
-          <div class="t-org">Boone, NC</div>
-          <div class="exp-sub">
-            <div class="t-item">
-              <span class="t-date">Apr 2026 — Present</span>
-              <h3 style="font-size:15.5px;">Administrative Assistant</h3>
-              <div class="chip-row"><span class="chip">Google Workspace</span><span class="chip">Scheduling</span><span class="chip">Process efficiency</span></div>
-            </div>
-            <div class="t-item">
-              <span class="t-date">Dec 2025 — Apr 2026</span>
-              <h3 style="font-size:15.5px;">Operational Supervisor</h3>
-              <div class="chip-row"><span class="chip">Team coordination</span><span class="chip">Resource management</span><span class="chip">Leadership</span></div>
-            </div>
-            <div class="t-item">
-              <span class="t-date">Jan 2025 — Dec 2025</span>
-              <h3 style="font-size:15.5px;">Operational Assistant / Analyst</h3>
-              <div class="chip-row"><span class="chip">Operational support</span><span class="chip">Logistics</span></div>
-            </div>
+          <span class="t-date">Jan 2025; Present</span>
+          <h3>Operational Supervisor</h3>
+          <div class="t-org">Plemmons Student Union · Boone, NC</div>
+          <ul class="resume-bullets">
+            <li>Coordinate administrative operations for a high-traffic university facility serving 10,000+ students, faculty, and campus organizations while managing competing priorities and time-sensitive requests.</li>
+            <li>Supervised a 7 member, patron-facing team using internal interfaces to build effective and adaptive task completion structures.</li>
+            <li>Scheduled and Coordinated 16+ weekly projects using structured project scheduling and time-management, achieving 100% on-time project completion and a &gt;90% average accuracy.</li>
+            <li>Maintain operational efficiency and strict adherence to safety compliance protocols for a facility staffed by 150+ student employees, supporting the successful execution of large-scale campus events.</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Team leadership</span>
+            <span class="chip">Project scheduling</span>
+            <span class="chip">Operations</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span class="divider-node"></span></div>
+
+<section id="affiliations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Professional Affiliations</div>
+      <h2 class="display">Where I show up</h2>
+    </div>
+    <div class="affil-grid">
+      <div class="affil-card reveal">
+        <div class="affil-badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4FE0D0" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 4v3M15 4v3M9 17v3M15 17v3M4 9h3M4 15h3M17 9h3M17 15h3"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+        </div>
+        <div>
+          <span class="affil-date">August 2026; Present</span>
+          <h3>Appalachian State Information Technology Professionals</h3>
+          <div class="affil-role">Member</div>
+          <ul class="resume-bullets">
+            <li>Developed technical skills by participating in club-led workshops and troubleshooting workshops.</li>
+            <li>Collaborated with peers on tech projects, networking workshops, and guest speaker events to stay current on industry needs.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="affil-card reveal">
+        <div class="affil-badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9B8CF0" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+        </div>
+        <div>
+          <span class="affil-date">August 2022; May 2023</span>
+          <h3>AFJROTC CyberPatriot</h3>
+          <div class="affil-role">Officer</div>
+          <ul class="resume-bullets">
+            <li>Led and monitored a team of 10+ cadets in national cybersecurity competitions, fostering teamwork and technical development.</li>
+            <li>Delegated system assignments (Windows, Linux, Cisco) to team members based on individual strengths to maximize competition scores.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -683,13 +741,13 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Recognition</div>
-      <h2 class="display">Awards.</h2>
+      <h2 class="display">Awards</h2>
     </div>
     <div class="award-grid">
       <div class="award-card reveal">
         <div class="award-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L6 21l6-3 6 3-2.5-8.5"/></svg></div>
         <div class="award-org">AFJROTC · Fayetteville State University</div>
-        <h3>Cadet Leadership — Outstanding Flight Award</h3>
+        <h3>Cadet Leadership; Outstanding Flight Award</h3>
         <p>Presented to the top-performing cadet flight during the Cadet Leadership Course, recognizing excellence in drills, academics, fitness, and discipline.</p>
       </div>
       <div class="award-card reveal">
@@ -701,14 +759,14 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="award-card reveal">
         <div class="award-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L6 21l6-3 6 3-2.5-8.5"/></svg></div>
         <div class="award-org">Living Magazine</div>
-        <h3>"The Power of the Written Word" — First Prize</h3>
+        <h3>"The Power of the Written Word"; First Prize</h3>
         <p>Essay contest first-prize recipient for "Writing With Shortcuts," published under "The Last Word" in the July 2024 issue.</p>
       </div>
       <div class="award-card reveal">
         <div class="award-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5L6 21l6-3 6 3-2.5-8.5"/></svg></div>
         <div class="award-org">Plemmons Student Union</div>
         <h3>Leadership Recognition</h3>
-        <p>A certificate recognizing service and dedication to the leadership team for the 2025–2026 academic year.</p>
+        <p>A certificate recognizing service and dedication to the leadership team for the 2025; 2026 academic year.</p>
       </div>
     </div>
   </div>
@@ -720,40 +778,53 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Testimonials</div>
-      <h2 class="display">What people say.</h2>
+      <h2 class="display">What people say</h2>
     </div>
     <div class="test-grid">
       <div class="test-card reveal">
         <span class="test-quote-mark">"</span>
         <div class="test-head">
-          <div class="avatar">SH</div>
-          <div><h4>Dr. Sarah Hopton, PhD</h4><span>Professor of Technical Writing, Appalachian State University</span></div>
+          <div class="avatar">SL</div>
+          <div><h4>Dr. Sarah Long</h4><span>Professor, Rhetoric and Technical Writing, Appalachian State University</span></div>
         </div>
-        <p>Lea communicated complex technical problems with clarity and precision — a skill that will serve her well in any collaborative or client-facing role. She brought something rarer: the ability to hold both analytical and interpersonal demands at once.</p>
+        <p>"She distinguished herself as one of those students you find yourself thinking about long after the semester ends... Lea communicated complex technical problems with clarity and precision, a skill that cannot be taught easily. I recommend her without reservation."</p>
+        <a class="proj-link" style="opacity:1; margin-top:16px;" href="letters/sarah-long.pdf" target="_blank" rel="noopener">Read full letter <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="test-card reveal">
         <span class="test-quote-mark">"</span>
         <div class="test-head">
           <div class="avatar">TH</div>
-          <div><h4>Dr. Tony Hobert, Jr. PhD</h4><span>Professor of Political Science, Winthrop University</span></div>
+          <div><h4>Tony Hobert, Jr., PhD</h4><span>Professor of Political Science, Winthrop University</span></div>
         </div>
-        <p>I was consistently astounded by the accuracy of her mind, revealed through jokes, questions, and comments. She turned in every assignment early, and consistently earned the highest marks in the course.</p>
+        <p>"Lea Nixon is an intelligent, ambitious young scholar who has stood out in every academic endeavor... I was consistently astounded by the acuity of her mind. I have no doubt that she will find success in any and all academic pursuits."</p>
+        <a class="proj-link" style="opacity:1; margin-top:16px;" href="letters/tony-hobert.pdf" target="_blank" rel="noopener">Read full letter <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="test-card reveal">
         <span class="test-quote-mark">"</span>
         <div class="test-head">
           <div class="avatar">JG</div>
-          <div><h4>Jim Greene</h4><span>Building Director, Plemmons Student Union</span></div>
+          <div><h4>James J. Greene</h4><span>Director, Plemmons Student Union, Appalachian State University</span></div>
         </div>
-        <p>One of Lea's strongest attributes is her ability to analyze problems and take initiative in addressing them. She demonstrates a strong capacity to assess situations critically and implement effective, efficient solutions.</p>
+        <p>"She has consistently distinguished herself as a reliable, thoughtful, and solutions-oriented professional... Lea is a motivated and capable individual who brings together technical skill, curiosity, and a strong sense of responsibility. She has my full support and highest recommendation."</p>
+        <a class="proj-link" style="opacity:1; margin-top:16px;" href="letters/james-greene.pdf" target="_blank" rel="noopener">Read full letter <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="test-card reveal">
         <span class="test-quote-mark">"</span>
         <div class="test-head">
           <div class="avatar">TV</div>
-          <div><h4>Thomas Vienneau</h4><span>Team Manager, Apple</span></div>
+          <div><h4>Thomas Vienneau</h4><span>AppleCare Team Manager</span></div>
         </div>
-        <p>Her growth was largely driven by her own determination and hard work, particularly evident in her focus on customer well-being. Any organization fortunate enough to have Lea as a member is truly blessed.</p>
+        <p>"She consistently demonstrated exceptional employee qualities... Any organization fortunate enough to have Lea as a member is truly blessed. In my professional opinion, she is an invaluable asset to any group she joins."</p>
+        <a class="proj-link" style="opacity:1; margin-top:16px;" href="letters/thomas-vienneau.pdf" target="_blank" rel="noopener">Read full letter <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="test-card reveal">
+        <span class="test-quote-mark">"</span>
+        <div class="test-head">
+          <div class="avatar">AH</div>
+          <div><h4>Alex F. Howard, DrPH</h4><span>Teaching Associate Professor of Public Health, Appalachian State University</span></div>
+        </div>
+        <p>"Lea established a high standard for engagement and thoughtful discussion that undoubtedly influenced her classmates... Lea's written reflection on the re-emergence of measles in the U.S. is one of the best student products I have received from an undergraduate student."</p>
+        <a class="proj-link" style="opacity:1; margin-top:16px;" href="letters/alex-howard.pdf" target="_blank" rel="noopener">Read full letter <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
@@ -765,17 +836,12 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Giving Back to the Community</div>
-      <h2 class="display">Volunteer initiatives.</h2>
+      <h2 class="display">Volunteer initiatives</h2>
     </div>
     <div class="vol-grid">
       <div class="vol-card reveal">
         <div class="vol-media">
-          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
-            <defs><linearGradient id="v1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0F1B22"/><stop offset="100%" stop-color="#173B3B"/></linearGradient></defs>
-            <rect width="400" height="200" fill="url(#v1)"/>
-            <path d="M0 150 Q100 100 200 140 T400 120 V200 H0 Z" fill="#4FE0D0" opacity="0.15"/>
-            <path d="M0 170 Q120 130 220 160 T400 150 V200 H0 Z" fill="#4FE0D0" opacity="0.25"/>
-          </svg>
+          <img src="images/mtst.jpg" alt="Mountain-to-Sea Trail volunteer work in Boone, NC">
         </div>
         <div class="vol-body">
           <span class="t-date">Boone, NC · 2024</span>
@@ -785,31 +851,21 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       </div>
       <div class="vol-card reveal">
         <div class="vol-media">
-          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
-            <defs><linearGradient id="v2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#101625"/><stop offset="100%" stop-color="#1B2C4D"/></linearGradient></defs>
-            <rect width="400" height="200" fill="url(#v2)"/>
-            <path d="M0 150 Q100 100 200 140 T400 120 V200 H0 Z" fill="#6E9CF0" opacity="0.15"/>
-            <path d="M0 170 Q120 130 220 160 T400 150 V200 H0 Z" fill="#6E9CF0" opacity="0.25"/>
-          </svg>
+          <img src="images/zalooes.jpg" alt="Zalooes Canoes reforestation volunteer work">
         </div>
         <div class="vol-body">
           <span class="t-date">Boone, NC · 2026</span>
-          <h3>Zalooes Canoes — Reforestation Initiative</h3>
+          <h3>Zalooes Canoes; Reforestation Initiative</h3>
           <p>Environmental restoration effort in Jefferson County; collaborated with volunteers to plant trees and reinforce riverbanks to reduce erosion.</p>
         </div>
       </div>
       <div class="vol-card reveal">
         <div class="vol-media">
-          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
-            <defs><linearGradient id="v3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#160F25"/><stop offset="100%" stop-color="#2A1E4D"/></linearGradient></defs>
-            <rect width="400" height="200" fill="url(#v3)"/>
-            <path d="M0 150 Q100 100 200 140 T400 120 V200 H0 Z" fill="#9B8CF0" opacity="0.15"/>
-            <path d="M0 170 Q120 130 220 160 T400 150 V200 H0 Z" fill="#9B8CF0" opacity="0.25"/>
-          </svg>
+          <img src="images/helene.jpg" alt="Hurricane Helene cleanup initiative volunteer group">
         </div>
         <div class="vol-body">
           <span class="t-date">Boone, NC</span>
-          <h3>Hurricane Helene — Cleanup Initiative</h3>
+          <h3>Hurricane Helene; Cleanup Initiative</h3>
           <p>Community cleanup and recovery support, assisting Boone-area neighbors with debris removal and relief logistics.</p>
         </div>
       </div>
@@ -823,7 +879,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="contact-grid">
         <div>
           <div class="eyebrow" style="margin-bottom:18px;">Get in touch</div>
-          <h2>Reach out.</h2>
+          <h2>Reach out</h2>
         </div>
         <div class="contact-list">
           <a href="https://www.linkedin.com" target="_blank" rel="noopener">
