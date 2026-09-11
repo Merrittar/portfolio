@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASULearn Privacy &amp; Data Transparency Audit — Lea Merritt</title>
+<title>ASULearn Privacy &amp; Data Transparency Audit; Lea Merritt</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -379,7 +379,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 
 
 /* case-study components */
-/* Shared case-study components — default site theme (cyan/blue/violet, Space Grotesk + JetBrains Mono) */
+/* Shared case-study components; default site theme (cyan/blue/violet, Space Grotesk + JetBrains Mono) */
 
 .cs-hero{min-height:auto; padding:150px 0 70px; align-items:flex-start;}
 .cs-hero::before{background:radial-gradient(ellipse 900px 500px at 15% 0%, rgba(79,224,208,0.10), transparent 60%);}
@@ -439,6 +439,9 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 .rec-card p{font-size:13.5px; color:var(--text-dim); line-height:1.6;}
 
 .source-list{font-size:12.5px; color:var(--text-faint); line-height:1.9; max-width:760px;}
+.apa-refs{max-width:760px;}
+.apa-refs p{font-size:13px; color:var(--text-dim); line-height:1.7; margin:0 0 14px 28px; text-indent:-28px;}
+.apa-refs em{font-style:italic; color:var(--text);}
 .source-list span{display:block;}
 
 /* Timeline variant for stage-by-stage breakdowns (phishing anatomy) */
@@ -496,7 +499,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
     </a>
     <div class="eyebrow">Case Study · Privacy &amp; Data Ethics</div>
     <h1 class="cs-title display" style="margin-top:16px;">ASULearn: a privacy &amp; data transparency audit</h1>
-    <p class="cs-lede">A transparency audit comparing what Appalachian State University publicly discloses about student data collection against what its learning management system actually does — built entirely from publicly available policy documents, help-desk records, and peer-institution benchmarks.</p>
+    <p class="cs-lede">What does App State actually tell students about their data? I checked. This audit compares what's publicly disclosed against what AsULearn's own integrations actually do, benchmarked against peer universities running the same platforms.</p>
     <div class="cs-meta">
       <div><h4>Role</h4><p>Independent Auditor</p></div>
       <div><h4>Year</h4><p>2026</p></div>
@@ -509,7 +512,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
 <section style="padding-top:0;">
   <div class="wrap">
     <div class="stat-row reveal">
-      <div class="stat-card"><div class="num">2020</div><div class="lbl">Year the university-wide privacy statement was last revised — before AsULearn's current integrations existed</div></div>
+      <div class="stat-card"><div class="num">2020</div><div class="lbl">Year the university-wide privacy statement was last revised; before AsULearn's current integrations existed</div></div>
       <div class="stat-card"><div class="num">0</div><div class="lbl">Dedicated privacy notices found specifically for AsULearn or Canvas, despite both handling student academic data</div></div>
       <div class="stat-card"><div class="num">6+</div><div class="lbl">Third-party tools integrated into AsULearn (Zoom, Kaltura, VoiceThread, Pearson, Google Assignments, and more)</div></div>
       <div class="stat-card"><div class="num">2026</div><div class="lbl">Year App State began migrating AsULearn from Moodle to Canvas, its second LMS transition in this audit's scope</div></div>
@@ -523,7 +526,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap body-copy">
     <div class="eyebrow reveal">Executive Summary</div>
     <h3 class="reveal" style="margin-top:16px;">Why audit a university's LMS privacy practices?</h3>
-    <p class="reveal">Every App State student is required to use AsULearn (and, as of 2026, Canvas) to access coursework, submit assignments, and communicate with instructors — there's no opt-out. That mandatory relationship creates an obligation: students should be able to easily find out what data the platform collects, who can see it, and how long it's kept. This audit tests whether that obligation is being met, using only publicly available sources — no login access, no special data requests, nothing a prospective student or journalist couldn't find themselves.</p>
+    <p class="reveal">Every App State student uses AsULearn, soon Canvas, to access coursework, submit assignments, and talk to instructors. There's no opt-out. That makes one thing non-negotiable: students should be able to find out, easily, what the platform collects, who sees it, and how long it sticks around. This audit tests whether that's actually true, using nothing but public sources: no login access, no special requests, nothing a prospective student couldn't find themselves.</p>
     <p class="reveal">The short version: App State's institutional privacy practices are real and reasonably thorough, but they're not built for a modern LMS. The university's main privacy statement predates several of the tools AsULearn now runs on top of, and no dedicated notice explains what those integrations actually do with student data.</p>
     <div class="pull-quote reveal">A privacy policy that's technically accurate but practically undiscoverable isn't functioning as a privacy policy.</div>
   </div>
@@ -538,19 +541,19 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <h2 class="display">How the audit was scoped.</h2>
     </div>
     <div class="body-copy reveal">
-      <p>This is a documentation audit, not a technical one — it doesn't involve intercepting network traffic or reverse-engineering the platform. Instead, it works the way a student actually would: starting from App State's public privacy statement, following every link it provides, and checking whether AsULearn's own help documentation, app listings, and support pages match what that statement claims.</p>
+      <p>This is a documentation audit, not a technical one; it doesn't involve intercepting network traffic or reverse-engineering the platform. Instead, it works the way a student actually would: starting from App State's public privacy statement, following every link it provides, and checking whether AsULearn's own help documentation, app listings, and support pages match what that statement claims.</p>
       <p>Three source types were reviewed: (1) Appalachian State's institutional Privacy Statement and GDPR notice, both published on appstate.edu; (2) AsULearn/Moodle support documentation published by App State's IT knowledge base and the AsULearn mobile app's own listing; and (3) dedicated LMS privacy notices published by peer universities using the same Canvas or Moodle platforms, used as a benchmark for what "good" looks like.</p>
     </div>
 
     <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:44px 0 20px;">What the university's privacy statement actually covers</h3>
     <div class="body-copy reveal">
       <p>App State's Privacy Statement, last revised February 2020, is scoped to <strong>appstate.edu and the network of sites the university owns</strong>. It's a solid general-purpose policy: it discloses the use of Google Analytics and cookies, explains data-sharing limits with third-party vendors, and includes a full GDPR rights section for international visitors. It also explicitly invites individual departments to publish more specific privacy statements for their own platforms when needed.</p>
-      <p>AsULearn is exactly the kind of platform that invitation seems written for — and it doesn't have one. There's no AsULearn- or Canvas-specific privacy notice describing what the LMS collects beyond what's implied by the general statement.</p>
+      <p>AsULearn is exactly the kind of platform that invitation seems written for; and it doesn't have one. There's no AsULearn- or Canvas-specific privacy notice describing what the LMS collects beyond what's implied by the general statement.</p>
     </div>
 
     <h3 class="reveal" style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; margin:44px 0 20px;">What AsULearn's own documentation reveals</h3>
     <div class="body-copy reveal">
-      <p>App State's IT knowledge base describes AsULearn as a Moodle 4-based LMS that integrates with Zoom, Kaltura, VoiceThread, Pearson, and Google Assignments, among other tools. Each of those integrations is a separate data relationship — video attendance data through Zoom, engagement analytics through Kaltura, third-party assignment data through Pearson — and none of them are named or explained in the university's general privacy statement. The support documentation itself only states that AsULearn "ensures student privacy within the course," without defining what that means in practice.</p>
+      <p>App State's IT knowledge base describes AsULearn as a Moodle 4-based LMS that integrates with Zoom, Kaltura, VoiceThread, Pearson, and Google Assignments, among other tools. Each of those integrations is a separate data relationship; video attendance data through Zoom, engagement analytics through Kaltura, third-party assignment data through Pearson; and none of them are named or explained in the university's general privacy statement. The support documentation itself only states that AsULearn "ensures student privacy within the course," without defining what that means in practice.</p>
     </div>
   </div>
 </section>
@@ -565,11 +568,11 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
     </div>
 
     <div class="finding-list">
-      <div class="finding-item reveal"><span class="dot"></span><p><strong>No LMS-specific privacy notice.</strong> Peer institutions on the same Canvas platform — including UBC and Simon Fraser University — publish dedicated Canvas privacy pages explaining exactly what server logs, IP addresses, and usage data the LMS collects. App State currently relies on its general, five-year-old website privacy statement to cover this instead.</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p><strong>No LMS-specific privacy notice.</strong> Peer institutions on the same Canvas platform; including UBC and Simon Fraser University; publish dedicated Canvas privacy pages explaining exactly what server logs, IP addresses, and usage data the LMS collects. App State currently relies on its general, five-year-old website privacy statement to cover this instead.</p></div>
       <div class="finding-item reveal"><span class="dot"></span><p><strong>Third-party integrations aren't disclosed as data relationships.</strong> Tools like Zoom, Kaltura, and Pearson are listed as features in support docs, not flagged as places where student data leaves the LMS. A student reading only the privacy statement would have no way to know these integrations exist.</p></div>
-      <div class="finding-item reveal"><span class="dot"></span><p><strong>The policy predates the platform it now needs to cover.</strong> The 2020 revision date sits before AsULearn's current integration list and well before the 2026 migration to Canvas — a transition significant enough to change what data is collected and how, without a corresponding privacy update found in this audit.</p></div>
-      <div class="finding-item reveal"><span class="dot"></span><p><strong>Learning analytics go unmentioned.</strong> Modern LMS platforms typically log activity completion, time-on-task, and engagement patterns for analytics purposes. Published research on Canvas at other institutions confirms this kind of data is collected by default — App State's public documentation doesn't confirm or deny whether the same applies here.</p></div>
-      <div class="finding-item reveal"><span class="dot"></span><p><strong>Discoverability is the core problem, not intent.</strong> Nothing found in this audit suggests bad-faith data practices — the issue is that accurate information is scattered across a general privacy statement, a GDPR notice, and disconnected support articles, with no single page a student could point to and say "this is what AsULearn does with my data."</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p><strong>The policy predates the platform it now needs to cover.</strong> The 2020 revision date sits before AsULearn's current integration list and well before the 2026 migration to Canvas; a transition significant enough to change what data is collected and how, without a corresponding privacy update found in this audit.</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p><strong>Learning analytics go unmentioned.</strong> Modern LMS platforms typically log activity completion, time-on-task, and engagement patterns for analytics purposes. Published research on Canvas at other institutions confirms this kind of data is collected by default; App State's public documentation doesn't confirm or deny whether the same applies here.</p></div>
+      <div class="finding-item reveal"><span class="dot"></span><p><strong>Discoverability is the core problem, not intent.</strong> Nothing found in this audit suggests bad-faith data practices; the issue is that accurate information is scattered across a general privacy statement, a GDPR notice, and disconnected support articles, with no single page a student could point to and say "this is what AsULearn does with my data."</p></div>
       <div class="finding-item reveal"><span class="dot"></span><p><strong>The GDPR notice sets a standard the rest of the site doesn't match.</strong> App State does publish a detailed GDPR privacy notice for EEA-based visitors, proving the institution is capable of platform-specific disclosure when required to. That same level of detail hasn't been extended to U.S. students using AsULearn day to day.</p></div>
     </div>
   </div>
@@ -587,7 +590,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="rec-card reveal">
         <div class="rec-num">01</div>
         <h3>Publish a dedicated LMS privacy notice</h3>
-        <p>Give AsULearn/Canvas its own privacy page — modeled on the GDPR notice App State already maintains — covering what's logged, retained, and shared through the platform itself.</p>
+        <p>Give AsULearn/Canvas its own privacy page; modeled on the GDPR notice App State already maintains; covering what's logged, retained, and shared through the platform itself.</p>
       </div>
       <div class="rec-card reveal">
         <div class="rec-num">02</div>
@@ -597,12 +600,12 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="rec-card reveal">
         <div class="rec-num">03</div>
         <h3>Tie privacy updates to platform migrations</h3>
-        <p>Treat the 2026 Canvas migration as a trigger for a privacy review — new platforms mean new data flows, and the policy should move when the technology does.</p>
+        <p>Treat the 2026 Canvas migration as a trigger for a privacy review; new platforms mean new data flows, and the policy should move when the technology does.</p>
       </div>
       <div class="rec-card reveal">
         <div class="rec-num">04</div>
         <h3>Clarify learning-analytics use in plain language</h3>
-        <p>State directly whether engagement and completion data is collected for analytics, and if so, who can access it and what it's used for — instructors, administrators, or both.</p>
+        <p>State directly whether engagement and completion data is collected for analytics, and if so, who can access it and what it's used for; instructors, administrators, or both.</p>
       </div>
       <div class="rec-card reveal">
         <div class="rec-num">05</div>
@@ -612,7 +615,7 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
       <div class="rec-card reveal">
         <div class="rec-num">06</div>
         <h3>Match the GDPR notice's level of detail</h3>
-        <p>Use the university's own GDPR notice as the internal bar — if that level of specificity is achievable for international visitors, it's achievable for the LMS every student is required to use.</p>
+        <p>Use the university's own GDPR notice as the internal bar; if that level of specificity is achievable for international visitors, it's achievable for the LMS every student is required to use.</p>
       </div>
     </div>
   </div>
@@ -624,7 +627,15 @@ footer{padding:40px 0; border-top:1px solid var(--line);}
   <div class="wrap">
     <div class="body-copy reveal">
       <div class="eyebrow" style="margin-bottom:16px;">Sources</div>
-      <p style="font-size:13.5px;">Appalachian State University's Privacy Statement and GDPR Privacy Notice (appstate.edu); AsULearn Student Support documentation, App State IT Knowledge Base (confluence.appstate.edu); the AsULearn mobile app listing; App State ITS news posts on the 2026 AsULearn-to-Canvas migration and Data Privacy Week 2026; and published Canvas privacy notices from the University of British Columbia and Simon Fraser University, used for peer-institution benchmarking.</p>
+      <div class="apa-refs">
+        <p>Appalachian State University. (2020, February 7). <em>Appalachian privacy statement</em>. https://www.appstate.edu/privacy/</p>
+        <p>Appalachian State University, Information Technology Services. (n.d.). <em>AsULearn student support</em>. Confluence. https://confluence.appstate.edu/spaces/ATKB/pages/29491527/AsULearn+Student+Support</p>
+        <p>Appalachian State University, Information Technology Services. (n.d.). <em>Appalachian State University GDPR privacy notice</em>. https://its.appstate.edu/data-governance/appalachian-state-university-gdpr-privacy-notice</p>
+        <p>Appalachian State University, Information Technology Services. (2026, January 28). <em>Take control of your data: Data Privacy Week 2026</em>. https://its.appstate.edu/news/category/32</p>
+        <p>Appalachian State University, Information Technology Services. (2026, March 30). <em>Student update: 2026 course transitions from AsULearn to Canvas</em>. https://its.appstate.edu/news/category/32</p>
+        <p>University of British Columbia, Office of Learning Technology. (n.d.). <em>Canvas &amp; privacy</em>. https://canvas-faculty.sites.olt.ubc.ca/?p=2589</p>
+        <p>Simon Fraser University. (n.d.). <em>Protection of privacy and Canvas</em>. https://www.sfu.ca/canvas/privacy-protection-notice.html</p>
+      </div>
     </div>
   </div>
 </section>
